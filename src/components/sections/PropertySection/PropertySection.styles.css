@@ -1,0 +1,110 @@
+.propertySection {
+  position: relative;
+  background-color: var(--color-canvas);
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.propertyInner {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+/* Stats grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .statsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Property map */
+.propertyMap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+@media (min-width: 1024px) {
+  .propertyMap {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.propertyMapVisual {
+  flex: 1;
+  min-height: 320px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: relative;
+  background-color: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+}
+
+.propertyMapContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* SVG map zones */
+.mapZone {
+  cursor: pointer;
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.mapZone:hover {
+  opacity: 0.85;
+}
+
+/* Demographics */
+.demographicsGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .demographicsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.demographicCard {
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.demographicStat {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 300;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.demographicLabel {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.propertyCTAWrapper {
+  display: flex;
+  justify-content: center;
+}
