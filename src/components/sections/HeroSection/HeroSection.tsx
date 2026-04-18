@@ -141,22 +141,10 @@ export function HeroSection({ className }: HeroSectionProps) {
 
           {/* CTA Buttons */}
           <div className="heroCTAGroup">
-            <CTAButton
-              variant="glow"
-              size="lg"
-              className="heroCTA"
-              onClick={scrollToProperty}
-              ariaLabel="Explore the property — scroll to property overview"
-            >
+            <CTAButton variant="glow" size="lg" className="heroCTA" onClick={scrollToProperty}>
               Explore the Property
             </CTAButton>
-            <CTAButton
-              variant="ghost"
-              size="lg"
-              className="heroCTA"
-              onClick={scrollToLeasing}
-              ariaLabel="View leasing opportunities — scroll to retail section"
-            >
+            <CTAButton variant="ghost" size="lg" className="heroCTA" onClick={scrollToLeasing}>
               View Leasing Options →
             </CTAButton>
           </div>
