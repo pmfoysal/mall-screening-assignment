@@ -1,0 +1,117 @@
+import type { DiningVenue } from "@/types/sections.types";
+
+export const diningVenues: readonly DiningVenue[] = [
+  {
+    id: "din-tai-fung",
+    name: "Din Tai Fung",
+    cuisineType: "Taiwanese · Dim Sum",
+    category: "international",
+    imageSrc:
+      "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&q=80",
+    description:
+      "World-renowned Taiwanese restaurant group known for its legendary soup dumplings.",
+    isSignature: true,
+  },
+  {
+    id: "nobu",
+    name: "Nobu",
+    cuisineType: "Japanese · New Style",
+    category: "celebrity-chef",
+    imageSrc:
+      "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&q=80",
+    description:
+      "The global culinary empire of chef Nobu Matsuhisa brings its signature Japanese-Peruvian fusion.",
+    isSignature: true,
+  },
+  {
+    id: "bobby-flay",
+    name: "Gato by Bobby Flay",
+    cuisineType: "Mediterranean · New American",
+    category: "celebrity-chef",
+    imageSrc:
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
+    description:
+      "Celebrity chef Bobby Flay brings his celebrated Mediterranean-inspired cuisine.",
+    isSignature: true,
+  },
+  {
+    id: "shake-shack",
+    name: "Shake Shack",
+    cuisineType: "American · Burgers",
+    category: "casual",
+    imageSrc:
+      "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80",
+    description:
+      "The iconic New York burger institution — a visitor favorite for fast-casual.",
+  },
+  {
+    id: "berry-fresh",
+    name: "Berry Fresh Market",
+    cuisineType: "Food Hall · International",
+    category: "food-hall",
+    imageSrc:
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80",
+    description:
+      "A vibrant multi-concept food hall featuring global cuisines under one roof.",
+    isSignature: true,
+  },
+  {
+    id: "the-chocolate-factory",
+    name: "Hershey's Chocolate World",
+    cuisineType: "Desserts · Experience",
+    category: "casual",
+    imageSrc:
+      "https://images.unsplash.com/photo-1548907040-4baa42d10919?w=600&q=80",
+    description:
+      "An immersive chocolate experience and retail destination beloved by all ages.",
+  },
+  {
+    id: "ipic",
+    name: "iPic Theaters",
+    cuisineType: "Dine-In Cinema",
+    category: "casual",
+    imageSrc:
+      "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&q=80",
+    description:
+      "Luxury dine-in cinema combining premium viewing with restaurant-quality service.",
+    isSignature: true,
+  },
+  {
+    id: "bubba-gump",
+    name: "Bubba Gump Shrimp Co.",
+    cuisineType: "American · Seafood",
+    category: "casual",
+    imageSrc:
+      "https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&q=80",
+    description:
+      "Fun, family-friendly seafood dining in a distinctive themed environment.",
+  },
+  {
+    id: "dream-bakery",
+    name: "Dream Bakery",
+    cuisineType: "Artisan Bakery · Café",
+    category: "cafe",
+    imageSrc:
+      "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80",
+    description: "House-made pastries, artisan coffees, and specialty breads.",
+  },
+  {
+    id: "starbucks-reserve",
+    name: "Starbucks Reserve",
+    cuisineType: "Specialty Coffee · Café",
+    category: "cafe",
+    imageSrc:
+      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80",
+    description:
+      "The premium Starbucks Reserve experience with rare small-lot coffees.",
+  },
+] as const;
+
+export const diningCategories = [
+  { id: "all" as const, label: "All Dining" },
+  { id: "celebrity-chef" as const, label: "Celebrity Chef" },
+  { id: "international" as const, label: "International" },
+  { id: "casual" as const, label: "Casual Dining" },
+  { id: "cafe" as const, label: "Café & Bakeries" },
+  { id: "food-hall" as const, label: "Food Hall" },
+] as const;
