@@ -1,39 +1,31 @@
-"use client";
+'use client'
 
-import { motion } from "framer-motion";
-import { SectionContainer } from "@/components/layout/SectionContainer";
-import { SectionHeading } from "@/components/shared/SectionHeading";
-import { StatCard } from "@/components/shared/StatCard";
-import { CTAButton } from "@/components/shared/CTAButton";
-import {
-  staggerContainer,
-  staggerItem,
-  fadeInUp,
-  VIEWPORT_ONCE,
-} from "@/lib/animations";
-import { useLenis } from "@/components/layout/LenisProvider";
-import { propertyStats, demographicsData } from "@/data/mall.config";
-import "./PropertySection.styles.css";
+import { motion } from 'framer-motion'
+import { SectionContainer } from '@/components/layout/SectionContainer'
+import { SectionHeading } from '@/components/shared/SectionHeading'
+import { StatCard } from '@/components/shared/StatCard'
+import { CTAButton } from '@/components/shared/CTAButton'
+import { staggerContainer, staggerItem, fadeInUp, VIEWPORT_ONCE } from '@/lib/animations'
+import { useLenis } from '@/components/layout/LenisProvider'
+import { propertyStats, demographicsData } from '@/data/mall.config'
+import './PropertySection.styles.css'
 
 /**
  * Property overview section — animated stats grid, property map SVG,
  * and demographic data to validate the opportunity.
  */
 export function PropertySection() {
-  const { lenis } = useLenis();
+  const lenisRef = useLenis()
 
   const scrollToEvents = () => {
-    lenis?.scrollTo("#events", {
+    lenisRef.current?.scrollTo('#events', {
       duration: 1.2,
       easing: (t: number) => 1 - Math.pow(1 - t, 4),
-    });
-  };
+    })
+  }
 
   return (
-    <SectionContainer
-      id="property"
-      label="Property Overview — Why American Dream"
-    >
+    <SectionContainer id="property" label="Property Overview — Why American Dream">
       <div className="propertySection">
         <div className="propertyInner">
           <SectionHeading
@@ -71,10 +63,7 @@ export function PropertySection() {
             whileInView="visible"
             viewport={VIEWPORT_ONCE}
           >
-            <div
-              className="propertyMapVisual"
-              aria-label="American Dream property map"
-            >
+            <div className="propertyMapVisual" aria-label="American Dream property map">
               <PropertyMapSVG />
             </div>
 
@@ -102,10 +91,10 @@ export function PropertySection() {
                       className="demographicStat"
                       style={{
                         color: zone.color,
-                        fontSize: "1rem",
-                        fontFamily: "var(--font-body)",
-                        letterSpacing: "0.1em",
-                        textTransform: "uppercase",
+                        fontSize: '1rem',
+                        fontFamily: 'var(--font-body)',
+                        letterSpacing: '0.1em',
+                        textTransform: 'uppercase',
                       }}
                     >
                       {zone.name}
@@ -130,14 +119,10 @@ export function PropertySection() {
               initial="hidden"
               whileInView="visible"
               viewport={VIEWPORT_ONCE}
-              style={{ marginTop: "var(--space-8)" }}
+              style={{ marginTop: 'var(--space-8)' }}
             >
               {demographicsData.map((item) => (
-                <motion.div
-                  key={item.stat}
-                  className="demographicCard"
-                  variants={staggerItem}
-                >
+                <motion.div key={item.stat} className="demographicCard" variants={staggerItem}>
                   <p className="demographicStat">{item.stat}</p>
                   <p className="demographicLabel">{item.description}</p>
                 </motion.div>
@@ -154,7 +139,7 @@ export function PropertySection() {
         </div>
       </div>
     </SectionContainer>
-  );
+  )
 }
 
 // Simplified property map SVG
@@ -163,7 +148,7 @@ function PropertyMapSVG() {
     <svg
       viewBox="0 0 400 320"
       xmlns="http://www.w3.org/2000/svg"
-      style={{ width: "100%", height: "100%", minHeight: "320px" }}
+      style={{ width: '100%', height: '100%', minHeight: '320px' }}
       aria-hidden="true"
     >
       <rect width="400" height="320" fill="oklch(10% 0.01 264)" />
@@ -334,36 +319,32 @@ function PropertyMapSVG() {
         East Rutherford, NJ — 6 miles from NYC
       </text>
     </svg>
-  );
+  )
 }
 
 const mapZones = [
   {
-    id: "entertainment",
-    name: "Entertainment Zone",
-    color: "oklch(65% 0.2 45)",
-    description:
-      "Nickelodeon Universe, DreamWorks Water Park, Big SNOW, Sea Life Aquarium",
+    id: 'entertainment',
+    name: 'Entertainment Zone',
+    color: 'oklch(65% 0.2 45)',
+    description: 'Nickelodeon Universe, DreamWorks Water Park, Big SNOW, Sea Life Aquarium',
   },
   {
-    id: "luxury",
-    name: "Luxury Wing",
-    color: "oklch(72% 0.12 75)",
-    description:
-      "Hermès, Gucci, Louis Vuitton, Dior, Saint Laurent — dedicated premium floor",
+    id: 'luxury',
+    name: 'Luxury Wing',
+    color: 'oklch(72% 0.12 75)',
+    description: 'Hermès, Gucci, Louis Vuitton, Dior, Saint Laurent — dedicated premium floor',
   },
   {
-    id: "dining",
-    name: "Dining & Lifestyle",
-    color: "oklch(60% 0.18 45)",
-    description:
-      "100+ restaurants — celebrity chef concepts, international dining, food halls",
+    id: 'dining',
+    name: 'Dining & Lifestyle',
+    color: 'oklch(60% 0.18 45)',
+    description: '100+ restaurants — celebrity chef concepts, international dining, food halls',
   },
   {
-    id: "events",
-    name: "Dream Live & Expo",
-    color: "oklch(65% 0.15 290)",
-    description:
-      "5,000-seat PAC and 48,000 sq ft Expo Hall for events, concerts, and conventions",
+    id: 'events',
+    name: 'Dream Live & Expo',
+    color: 'oklch(65% 0.15 290)',
+    description: '5,000-seat PAC and 48,000 sq ft Expo Hall for events, concerts, and conventions',
   },
-] as const;
+] as const

@@ -1,5 +1,2 @@
-export { LenisProvider, useLenis } from "./LenisProvider";
-export type {
-  LenisProviderProps,
-  LenisContextValue,
-} from "./LenisProvider.types";
+export { LenisProvider, useLenis } from './LenisProvider'
+export type { LenisProviderProps, LenisContextValue } from './LenisProvider.types'

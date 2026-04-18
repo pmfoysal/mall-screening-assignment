@@ -1,27 +1,22 @@
-"use client";
+'use client'
 
-import { useRef } from "react";
-import Image from "next/image";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-import { motion } from "framer-motion";
-import { SectionContainer } from "@/components/layout/SectionContainer";
-import { SectionHeading } from "@/components/shared/SectionHeading";
-import { CTAButton } from "@/components/shared/CTAButton";
-import {
-  staggerContainer,
-  staggerItem,
-  fadeInUp,
-  VIEWPORT_ONCE,
-} from "@/lib/animations";
-import { useLenis } from "@/components/layout/LenisProvider";
-import { useReducedMotion } from "@/hooks/useReducedMotion";
-import { attractionsData } from "@/data/attractions.data";
-import { BLUR_DATA_URL } from "@/lib/constants";
-import "./AttractionsSection.styles.css";
+import { useRef } from 'react'
+import Image from 'next/image'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
+import { motion } from 'framer-motion'
+import { SectionContainer } from '@/components/layout/SectionContainer'
+import { SectionHeading } from '@/components/shared/SectionHeading'
+import { CTAButton } from '@/components/shared/CTAButton'
+import { staggerContainer, staggerItem, fadeInUp, VIEWPORT_ONCE } from '@/lib/animations'
+import { useLenis } from '@/components/layout/LenisProvider'
+import { useReducedMotion } from '@/hooks/useReducedMotion'
+import { attractionsData } from '@/data/attractions.data'
+import { BLUR_DATA_URL } from '@/lib/constants'
+import './AttractionsSection.styles.css'
 
-gsap.registerPlugin(ScrollTrigger, useGSAP);
+gsap.registerPlugin(ScrollTrigger, useGSAP)
 
 /**
  * Attractions & Entertainment section.
@@ -29,58 +24,53 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
  * Mobile/Tablet: Vertical stacked layout (GSAP disabled).
  */
 export function AttractionsSection() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const prefersReducedMotion = useReducedMotion();
-  const { lenis } = useLenis();
+  const containerRef = useRef<HTMLDivElement>(null)
+  const prefersReducedMotion = useReducedMotion()
+  const lenisRef = useLenis()
 
   useGSAP(
     () => {
-      if (prefersReducedMotion) return;
+      if (prefersReducedMotion) return
       // Only apply horizontal scroll on desktop
-      if (window.innerWidth < 1024) return;
+      if (window.innerWidth < 1024) return
 
-      const track = containerRef.current?.querySelector(".attractionsTrack");
-      const scrollContainer = containerRef.current?.querySelector(
-        ".attractionsScrollContainer",
-      );
+      const track = containerRef.current?.querySelector('.attractionsTrack')
+      const scrollContainer = containerRef.current?.querySelector('.attractionsScrollContainer')
 
-      if (!track || !scrollContainer) return;
+      if (!track || !scrollContainer) return
 
-      const panels = track.querySelectorAll(".attractionPanel");
-      const panelCount = panels.length;
+      const panels = track.querySelectorAll('.attractionPanel')
+      const panelCount = panels.length
 
       gsap.to(track, {
         xPercent: -100 * (panelCount - 1),
-        ease: "none",
+        ease: 'none',
         scrollTrigger: {
           trigger: scrollContainer,
-          start: "top top",
+          start: 'top top',
           end: () => `+=${window.innerWidth * (panelCount - 1)}`,
           scrub: 1,
           pin: true,
           anticipatePin: 1,
           invalidateOnRefresh: true,
         },
-      });
+      })
     },
-    { scope: containerRef },
-  );
+    { scope: containerRef }
+  )
 
   const scrollToEvents = () => {
-    lenis?.scrollTo("#events", {
+    lenisRef.current?.scrollTo('#events', {
       duration: 1.2,
       easing: (t: number) => 1 - Math.pow(1 - t, 4),
-    });
-  };
+    })
+  }
 
   return (
     <SectionContainer id="attractions" label="Attractions & Entertainment">
       <div className="attractionsSection" ref={containerRef}>
         {/* ─── Desktop: Horizontal scroll panels ─── */}
-        <div
-          className="attractionsScrollContainer"
-          aria-label="Attraction features"
-        >
+        <div className="attractionsScrollContainer" aria-label="Attraction features">
           <div className="attractionsTrack">
             {attractionsData.map((attraction, index) => (
               <div
@@ -109,28 +99,17 @@ export function AttractionsSection() {
                   <h3 className="attractionName">{attraction.name}</h3>
                   <p className="attractionTagline">{attraction.tagline}</p>
 
-                  <div
-                    className="attractionStats"
-                    aria-label={`${attraction.name} statistics`}
-                  >
+                  <div className="attractionStats" aria-label={`${attraction.name} statistics`}>
                     {attraction.stats.map((stat) => (
                       <div key={stat.label} className="attractionStatItem">
-                        <span className="attractionStatValue">
-                          {stat.value}
-                        </span>
-                        <span className="attractionStatLabel">
-                          {stat.label}
-                        </span>
+                        <span className="attractionStatValue">{stat.value}</span>
+                        <span className="attractionStatLabel">{stat.label}</span>
                       </div>
                     ))}
                   </div>
 
                   {index === attractionsData.length - 1 && (
-                    <CTAButton
-                      variant="glow"
-                      size="md"
-                      onClick={scrollToEvents}
-                    >
+                    <CTAButton variant="glow" size="md" onClick={scrollToEvents}>
                       See What&apos;s Possible
                     </CTAButton>
                   )}
@@ -161,11 +140,7 @@ export function AttractionsSection() {
             viewport={VIEWPORT_ONCE}
           >
             {attractionsData.map((attraction) => (
-              <motion.div
-                key={attraction.id}
-                className="attractionCard"
-                variants={staggerItem}
-              >
+              <motion.div key={attraction.id} className="attractionCard" variants={staggerItem}>
                 <div className="attractionCardImage">
                   <Image
                     src={attraction.imageSrc}
@@ -186,12 +161,8 @@ export function AttractionsSection() {
                   <div className="attractionCardStats">
                     {attraction.stats.slice(0, 2).map((stat) => (
                       <div key={stat.label} className="attractionStatItem">
-                        <span className="attractionStatValue">
-                          {stat.value}
-                        </span>
-                        <span className="attractionStatLabel">
-                          {stat.label}
-                        </span>
+                        <span className="attractionStatValue">{stat.value}</span>
+                        <span className="attractionStatLabel">{stat.label}</span>
                       </div>
                     ))}
                   </div>
@@ -213,5 +184,5 @@ export function AttractionsSection() {
         </div>
       </div>
     </SectionContainer>
-  );
+  )
 }

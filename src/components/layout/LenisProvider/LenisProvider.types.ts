@@ -1,9 +1,9 @@
-import type Lenis from "lenis";
+import type Lenis from 'lenis'
 
 export interface LenisProviderProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
-export interface LenisContextValue {
-  lenis: Lenis | null;
-}
+// Context holds the mutable ref so consumers always get the latest
+// Lenis instance without causing re-renders when it's set.
+export type LenisContextValue = React.MutableRefObject<Lenis | null>
