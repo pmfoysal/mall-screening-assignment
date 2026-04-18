@@ -8,7 +8,7 @@ import { useActiveSection } from '@/hooks/useActiveSection'
 import { useTheme } from '@/hooks/useTheme'
 import { useLenis } from '@/components/layout/LenisProvider'
 import { CTAButton } from '@/components/shared/CTAButton'
-import { NAV_ITEMS } from '@/lib/constants'
+import { NAV_ITEMS, PAGE_NAV_ITEMS } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 import './GlobalNavigation.styles.css'
 import type { GlobalNavigationProps } from './GlobalNavigation.types'
@@ -97,6 +97,17 @@ export function GlobalNavigation({ className }: GlobalNavigationProps) {
                     />
                   )}
                 </button>
+              </li>
+            ))}
+          </ul>
+
+          {/* Page links */}
+          <ul className="navPageLinks" role="list">
+            {PAGE_NAV_ITEMS.map((item) => (
+              <li key={item.href}>
+                <a href={item.href} className="pageNavLink">
+                  {item.label}
+                </a>
               </li>
             ))}
           </ul>
