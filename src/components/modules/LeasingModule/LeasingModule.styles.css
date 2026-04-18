@@ -1,0 +1,164 @@
+.leasingModule {
+  background-color: var(--color-canvas);
+  min-height: 100vh;
+}
+
+.leasingHero {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.leasingHeroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    oklch(5% 0 0 / 0.85) 0%,
+    oklch(5% 0 0 / 0.4) 60%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+.leasingHeroContent {
+  position: relative;
+  z-index: 10;
+  padding: var(--section-padding-x);
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  width: 100%;
+  padding-top: calc(72px + var(--space-10));
+}
+
+.leasingBackLink {
+  padding: var(--space-6) var(--section-padding-x);
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+.leasingSection {
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.leasingInner {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.leasingTypeGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .leasingTypeGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.leasingTypeCard {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  text-decoration: none;
+  transition: all var(--duration-normal) var(--ease-luxury);
+}
+
+.leasingTypeCard:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.leasingTypeImage {
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+
+.leasingTypeOverlay {
+  position: absolute;
+  inset: 0;
+  background: oklch(5% 0 0 / 0.3);
+}
+
+.leasingTypeInfo {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.leasingTypeTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 300;
+  color: var(--color-text-primary);
+}
+
+.leasingTypeTagline {
+  font-size: var(--text-body-sm);
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+.leasingTypeLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-label);
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-top: var(--space-2);
+}
+
+/* Detail view */
+.leasingDetailGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+}
+
+@media (min-width: 1024px) {
+  .leasingDetailGrid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.leasingHighlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
+
+.leasingHighlight {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+.leasingHighlightIcon {
+  color: var(--color-gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
