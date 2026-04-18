@@ -31,6 +31,12 @@
   color: var(--color-text-secondary);
 }
 
+.formLabelOptional {
+  opacity: 0.5;
+  font-weight: 400;
+  text-transform: none;
+}
+
 .formInput,
 .formSelect,
 .formTextarea {

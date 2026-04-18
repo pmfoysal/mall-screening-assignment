@@ -172,7 +172,7 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
 
           <div className="formField">
             <label className="formLabel" htmlFor="contact-message">
-              Message <span style={{ opacity: 0.5 }}>(Optional)</span>
+              Message <span className="formLabelOptional">(Optional)</span>
             </label>
             <textarea
               id="contact-message"
