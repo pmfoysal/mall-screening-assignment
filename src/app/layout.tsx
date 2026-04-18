@@ -26,6 +26,8 @@ const dmMono = DM_Mono({
 })
 
 export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
   themeColor: [
     { media: '(prefers-color-scheme: dark)', color: '#0a0a14' },
     { media: '(prefers-color-scheme: light)', color: '#fafaf7' },
@@ -33,7 +35,11 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: "American Dream | The World's Most Extraordinary Destination",
+  metadataBase: new URL('https://american-dream-deck.vercel.app'),
+  title: {
+    default: "American Dream | The World's Most Extraordinary Destination",
+    template: '%s | American Dream',
+  },
   description:
     'American Dream — 3 million sq ft of retail, dining, entertainment, and luxury in East Rutherford, NJ. 40M+ annual visitors, 6 miles from NYC. Explore leasing, events, and sponsorship opportunities.',
   keywords: [
@@ -50,6 +56,12 @@ export const metadata: Metadata = {
     description: '40M+ annual visitors. 3M sq ft. 6 miles from NYC. Unlimited opportunity.',
     type: 'website',
     locale: 'en_US',
+    siteName: 'American Dream',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "American Dream | The World's Most Extraordinary Destination",
+    description: '40M+ annual visitors. 3M sq ft. 6 miles from NYC.',
   },
   robots: { index: true, follow: true },
 }
