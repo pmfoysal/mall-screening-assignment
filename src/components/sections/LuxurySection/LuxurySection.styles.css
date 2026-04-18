@@ -79,11 +79,19 @@
 }
 
 .luxuryLabel::before {
-  content: "";
+  content: '';
   width: 24px;
   height: 1px;
   background-color: var(--color-gold);
   flex-shrink: 0;
+}
+
+/* Right text block in luxury section */
+.luxuryTextBlockRight {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  justify-content: center;
 }
 
 /* Brand carousel */
@@ -202,10 +210,5 @@
 .luxuryGoldDivider {
   width: 48px;
   height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    var(--color-gold),
-    transparent
-  );
+  background: linear-gradient(to right, transparent, var(--color-gold), transparent);
 }

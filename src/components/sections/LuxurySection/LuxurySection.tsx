@@ -67,12 +67,7 @@ export function LuxurySection() {
             initial="hidden"
             whileInView="visible"
             viewport={VIEWPORT_ONCE}
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 'var(--space-8)',
-              justifyContent: 'center',
-            }}
+            className="luxuryTextBlockRight"
           >
             <p className="luxuryBody">
               A dedicated luxury floor featuring the world&apos;s most coveted brands — from Hermès
