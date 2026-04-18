@@ -1,0 +1,132 @@
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  text-decoration: none;
+  transition:
+    background-color var(--duration-normal) var(--ease-luxury),
+    color var(--duration-normal) var(--ease-luxury),
+    border-color var(--duration-normal) var(--ease-luxury),
+    box-shadow var(--duration-normal) var(--ease-luxury),
+    transform var(--duration-fast) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+  font-size: var(--text-label);
+}
+
+.ctaButton:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.ctaButton:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 4px;
+}
+
+/* active tap feedback */
+.ctaButton:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+/* Variants */
+.ctaPrimary {
+  background-color: var(--color-gold);
+  color: oklch(7% 0.01 264);
+  border: 1.5px solid var(--color-gold);
+  padding: var(--space-3) var(--space-8);
+}
+.ctaPrimary:hover:not(:disabled) {
+  background-color: var(--color-gold-light);
+  box-shadow: var(--shadow-glow);
+}
+
+.ctaSecondary {
+  background-color: transparent;
+  color: var(--color-gold);
+  border: 1.5px solid var(--color-gold);
+  padding: var(--space-3) var(--space-8);
+}
+.ctaSecondary:hover:not(:disabled) {
+  background-color: oklch(72% 0.12 75 / 0.12);
+}
+
+.ctaGhost {
+  background-color: transparent;
+  color: white;
+  border: 1.5px solid oklch(100% 0 0 / 0.35);
+  padding: var(--space-3) var(--space-8);
+}
+.ctaGhost:hover:not(:disabled) {
+  background-color: oklch(100% 0 0 / 0.1);
+  border-color: oklch(100% 0 0 / 0.6);
+}
+
+.ctaGlow {
+  background-color: var(--color-gold);
+  color: oklch(7% 0.01 264);
+  border: 1.5px solid var(--color-gold);
+  padding: var(--space-3) var(--space-8);
+  box-shadow: var(--shadow-glow);
+}
+.ctaGlow:hover:not(:disabled) {
+  background-color: var(--color-gold-light);
+  box-shadow: var(--shadow-glow-lg);
+  transform: translateY(-2px);
+}
+
+.ctaDark {
+  background-color: var(--color-text-primary);
+  color: var(--color-text-inverse);
+  border: 1.5px solid var(--color-text-primary);
+  padding: var(--space-3) var(--space-8);
+}
+.ctaDark:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.ctaOutlineGold {
+  background-color: transparent;
+  color: var(--color-gold);
+  border: 1.5px solid var(--color-gold);
+  padding: var(--space-3) var(--space-8);
+}
+.ctaOutlineGold:hover:not(:disabled) {
+  background-color: var(--color-gold);
+  color: oklch(7% 0.01 264);
+}
+
+/* Sizes */
+.ctaSm {
+  padding: var(--space-2) var(--space-5);
+  font-size: 0.7rem;
+}
+.ctaMd {
+  padding: var(--space-3) var(--space-8);
+}
+.ctaLg {
+  padding: var(--space-4) var(--space-10);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+
+/* Loading spinner */
+.ctaSpinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: var(--animate-spin-slow);
+  flex-shrink: 0;
+}
