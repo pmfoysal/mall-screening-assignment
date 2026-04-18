@@ -80,22 +80,16 @@ export function PropertySection() {
                 {mapZones.map((zone) => (
                   <motion.div
                     key={zone.id}
-                    className="demographicCard"
+                    className="demographicCard demographicCardZone"
                     variants={staggerItem}
                     initial="hidden"
                     whileInView="visible"
                     viewport={VIEWPORT_ONCE}
-                    style={{ borderLeft: `3px solid ${zone.color}` }}
+                    style={{ borderLeftColor: zone.color }}
                   >
                     <p
-                      className="demographicStat"
-                      style={{
-                        color: zone.color,
-                        fontSize: '1rem',
-                        fontFamily: 'var(--font-body)',
-                        letterSpacing: '0.1em',
-                        textTransform: 'uppercase',
-                      }}
+                      className="demographicStat demographicStatZone"
+                      style={{ color: zone.color }}
                     >
                       {zone.name}
                     </p>
@@ -114,12 +108,11 @@ export function PropertySection() {
               titleSize="md"
             />
             <motion.div
-              className="demographicsGrid"
+              className="demographicsGrid demographicsGridSpaced"
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
               viewport={VIEWPORT_ONCE}
-              style={{ marginTop: 'var(--space-8)' }}
             >
               {demographicsData.map((item) => (
                 <motion.div key={item.stat} className="demographicCard" variants={staggerItem}>

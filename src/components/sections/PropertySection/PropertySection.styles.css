@@ -115,3 +115,22 @@
   display: flex;
   justify-content: center;
 }
+
+/* Map zone card with colored border */
+.demographicCardZone {
+  border-left-width: 3px;
+  padding-left: calc(var(--space-6) - 3px);
+}
+
+/* Zone stat styling */
+.demographicStatZone {
+  font-size: 1rem;
+  font-family: var(--font-body);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Demographics grid with spacing */
+.demographicsGridSpaced {
+  margin-top: var(--space-8);
+}
