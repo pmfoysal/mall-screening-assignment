@@ -1,6 +1,6 @@
-import { cn } from "@/lib/utils";
-import "./SectionContainer.styles.css";
-import type { SectionContainerProps } from "./SectionContainer.types";
+import { cn } from '@/lib/utils'
+import './SectionContainer.styles.css'
+import type { SectionContainerProps } from './SectionContainer.types'
 
 /**
  * Wrapper for every main section.
@@ -12,21 +12,16 @@ export function SectionContainer({
   label,
   className,
   fullBleed = false,
-  minHeight = "min-h-screen",
+  minHeight = 'min-h-screen',
 }: SectionContainerProps) {
   return (
     <section
       id={id}
       aria-label={label}
       data-section-id={id}
-      className={cn(
-        "sectionWrapper",
-        minHeight,
-        fullBleed ? "" : "",
-        className,
-      )}
+      className={cn('sectionWrapper', minHeight, fullBleed && 'sectionFullBleed', className)}
     >
       {children}
     </section>
-  );
+  )
 }

@@ -19,7 +19,8 @@ function SectionSkeleton() {
 }
 
 // ─── Dynamic Section Imports ─────────────────────────────────────────────────
-// Must be in a 'use client' component because of ssr:false (Next.js 16 rule)
+// Must be in a 'use client' component — Next.js 16 requires dynamic() with
+// any configuration (ssr:false or ssr:true) to be called inside a Client Component.
 
 const HeroSection = dynamic(
   () => import('@/components/sections/HeroSection').then((m) => m.HeroSection),

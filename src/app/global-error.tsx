@@ -1,9 +1,13 @@
 'use client'
 
+import { useEffect } from 'react'
+
 /**
  * Global error boundary for the root layout.
  * Catches errors in app/layout.tsx itself.
  * Must include <html> and <body> tags (replaces the layout when triggered).
+ * NOTE: next/link is not available here because the router context is absent
+ * (this component replaces the entire layout tree).
  */
 export default function GlobalError({
   error,
@@ -12,6 +16,9 @@ export default function GlobalError({
   error: Error & { digest?: string }
   reset: () => void
 }) {
+  useEffect(() => {
+    console.error('[GlobalError]', error)
+  }, [error])
   return (
     <html lang="en">
       <head>
@@ -83,6 +90,7 @@ export default function GlobalError({
           >
             Try Again
           </button>
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- next/link unavailable in global-error (no router context) */}
           <a
             href="/"
             style={{

@@ -1,23 +1,18 @@
-"use client";
+'use client'
 
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { CheckCircle } from "lucide-react";
-import { GlobalNavigation } from "@/components/layout/GlobalNavigation";
-import { SectionHeading } from "@/components/shared/SectionHeading";
-import { CTAButton } from "@/components/shared/CTAButton";
-import { ContactForm } from "@/components/shared/ContactForm";
-import {
-  staggerContainer,
-  staggerItem,
-  fadeInUp,
-  VIEWPORT_ONCE,
-} from "@/lib/animations";
-import { sponsorshipTiers, activationExamples } from "@/data/sponsorship.data";
-import { propertyStats } from "@/data/mall.config";
-import { BLUR_DATA_URL } from "@/lib/constants";
-import { cn } from "@/lib/utils";
-import "./SponsorshipModule.styles.css";
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { CheckCircle } from 'lucide-react'
+import { GlobalNavigation } from '@/components/layout/GlobalNavigation'
+import { SectionHeading } from '@/components/shared/SectionHeading'
+import { CTAButton } from '@/components/shared/CTAButton'
+import { ContactForm } from '@/components/shared/ContactForm'
+import { staggerContainer, staggerItem, VIEWPORT_ONCE } from '@/lib/animations'
+import { sponsorshipTiers, activationExamples } from '@/data/sponsorship.data'
+import { propertyStats } from '@/data/mall.config'
+import { BLUR_DATA_URL } from '@/lib/constants'
+import { cn } from '@/lib/utils'
+import './SponsorshipModule.styles.css'
 
 export function SponsorshipModule() {
   return (
@@ -57,10 +52,7 @@ export function SponsorshipModule() {
       {/* Audience Data */}
       <section className="moduleSection" aria-label="Audience data">
         <div className="moduleInner">
-          <SectionHeading
-            label="Our Audience"
-            title="The Numbers That Move Brands"
-          />
+          <SectionHeading label="Our Audience" title="The Numbers That Move Brands" />
           <motion.div
             className="audienceGrid"
             variants={staggerContainer}
@@ -68,12 +60,8 @@ export function SponsorshipModule() {
             whileInView="visible"
             viewport={VIEWPORT_ONCE}
           >
-            {propertyStats.slice(0, 4).map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                className="audienceStat"
-                variants={staggerItem}
-              >
+            {propertyStats.slice(0, 4).map((stat) => (
+              <motion.div key={stat.label} className="audienceStat" variants={staggerItem}>
                 <span className="audienceStatValue">{stat.display}</span>
                 <span className="audienceStatLabel">{stat.label}</span>
               </motion.div>
@@ -83,15 +71,9 @@ export function SponsorshipModule() {
       </section>
 
       {/* Partnership Tiers */}
-      <section
-        className="moduleSection moduleSectionAlt"
-        aria-label="Partnership tiers"
-      >
+      <section className="moduleSection moduleSectionAlt" aria-label="Partnership tiers">
         <div className="moduleInner">
-          <SectionHeading
-            label="Partnership Tiers"
-            title="Find Your Level of Engagement"
-          />
+          <SectionHeading label="Partnership Tiers" title="Find Your Level of Engagement" />
           <motion.div
             className="tiersGrid"
             variants={staggerContainer}
@@ -102,28 +84,16 @@ export function SponsorshipModule() {
             {sponsorshipTiers.map((tier) => (
               <motion.div
                 key={tier.id}
-                className={cn(
-                  "tierCard",
-                  tier.isHighlighted && "tierCardHighlighted",
-                )}
+                className={cn('tierCard', tier.isHighlighted && 'tierCardHighlighted')}
                 variants={staggerItem}
               >
-                {tier.isHighlighted && (
-                  <span className="tierHighlightBadge">Most Popular</span>
-                )}
+                {tier.isHighlighted && <span className="tierHighlightBadge">Most Popular</span>}
                 <h3 className="tierName">{tier.name}</h3>
                 <p className="tierDesc">{tier.description}</p>
-                <ul
-                  className="tierBenefits"
-                  aria-label={`${tier.name} benefits`}
-                >
-                  {tier.benefits.map((benefit, i) => (
-                    <li key={i} className="tierBenefit">
-                      <CheckCircle
-                        size={14}
-                        className="tierBenefitIcon"
-                        aria-hidden="true"
-                      />
+                <ul className="tierBenefits" aria-label={`${tier.name} benefits`}>
+                  {tier.benefits.map((benefit) => (
+                    <li key={benefit} className="tierBenefit">
+                      <CheckCircle size={14} className="tierBenefitIcon" aria-hidden="true" />
                       <span>{benefit}</span>
                     </li>
                   ))}
@@ -137,10 +107,7 @@ export function SponsorshipModule() {
       {/* Activation Examples */}
       <section className="moduleSection" aria-label="Activation examples">
         <div className="moduleInner">
-          <SectionHeading
-            label="Real Activations"
-            title="Brands That Chose American Dream"
-          />
+          <SectionHeading label="Real Activations" title="Brands That Chose American Dream" />
           <motion.div
             className="activationsGrid"
             variants={staggerContainer}
@@ -149,11 +116,7 @@ export function SponsorshipModule() {
             viewport={VIEWPORT_ONCE}
           >
             {activationExamples.map((example) => (
-              <motion.div
-                key={example.brand}
-                className="activationCard"
-                variants={staggerItem}
-              >
+              <motion.div key={example.brand} className="activationCard" variants={staggerItem}>
                 <div className="activationImage">
                   <Image
                     src={example.imageSrc}
@@ -187,5 +150,5 @@ export function SponsorshipModule() {
         </div>
       </section>
     </div>
-  );
+  )
 }

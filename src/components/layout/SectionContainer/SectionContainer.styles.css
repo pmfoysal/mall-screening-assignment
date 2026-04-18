@@ -3,3 +3,9 @@
   width: 100%;
   overflow: hidden;
 }
+
+/* Full-bleed variant: removes horizontal padding so content can span edge-to-edge */
+.sectionFullBleed {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

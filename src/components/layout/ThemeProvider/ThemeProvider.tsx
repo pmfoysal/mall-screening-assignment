@@ -1,8 +1,9 @@
-"use client";
+'use client'
 
-import { useEffect } from "react";
-import { useThemeStore } from "@/store/useThemeStore";
-import type { ThemeProviderProps } from "./ThemeProvider.types";
+import { useEffect } from 'react'
+import { useThemeStore } from '@/store/useThemeStore'
+import { TooltipProvider } from '@/components/ui/Tooltip'
+import type { ThemeProviderProps } from './ThemeProvider.types'
 
 /**
  * ThemeProvider — reads persisted theme preference from localStorage,
@@ -10,33 +11,33 @@ import type { ThemeProviderProps } from "./ThemeProvider.types";
  * Must be rendered client-side to avoid hydration mismatches.
  */
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  const { theme, setResolvedTheme } = useThemeStore();
+  const { theme, setResolvedTheme } = useThemeStore()
 
   useEffect(() => {
-    const applyTheme = (resolved: "light" | "dark") => {
-      const root = document.documentElement;
-      if (resolved === "dark") {
-        root.classList.add("dark");
+    const applyTheme = (resolved: 'light' | 'dark') => {
+      const root = document.documentElement
+      if (resolved === 'dark') {
+        root.classList.add('dark')
       } else {
-        root.classList.remove("dark");
+        root.classList.remove('dark')
       }
-      setResolvedTheme(resolved);
-    };
+      setResolvedTheme(resolved)
+    }
 
-    if (theme === "system") {
-      const mq = window.matchMedia("(prefers-color-scheme: dark)");
-      applyTheme(mq.matches ? "dark" : "light");
+    if (theme === 'system') {
+      const mq = window.matchMedia('(prefers-color-scheme: dark)')
+      applyTheme(mq.matches ? 'dark' : 'light')
 
       const handler = (e: MediaQueryListEvent) => {
-        applyTheme(e.matches ? "dark" : "light");
-      };
+        applyTheme(e.matches ? 'dark' : 'light')
+      }
 
-      mq.addEventListener("change", handler);
-      return () => mq.removeEventListener("change", handler);
+      mq.addEventListener('change', handler)
+      return () => mq.removeEventListener('change', handler)
     } else {
-      applyTheme(theme);
+      applyTheme(theme)
     }
-  }, [theme, setResolvedTheme]);
+  }, [theme, setResolvedTheme])
 
-  return <>{children}</>;
+  return <TooltipProvider>{children}</TooltipProvider>
 }

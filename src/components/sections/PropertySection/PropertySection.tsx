@@ -76,7 +76,7 @@ export function PropertySection() {
                 animate={false}
               />
 
-              <div className="propertyMapContent">
+              <div className="propertyMapZones">
                 {mapZones.map((zone) => (
                   <motion.div
                     key={zone.id}

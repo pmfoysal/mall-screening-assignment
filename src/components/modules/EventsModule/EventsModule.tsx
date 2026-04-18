@@ -1,32 +1,23 @@
-"use client";
+'use client'
 
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { GlobalNavigation } from "@/components/layout/GlobalNavigation";
-import { SectionHeading } from "@/components/shared/SectionHeading";
-import { CTAButton } from "@/components/shared/CTAButton";
-import { ContactForm } from "@/components/shared/ContactForm";
-import {
-  staggerContainer,
-  staggerItem,
-  fadeInUp,
-  VIEWPORT_ONCE,
-} from "@/lib/animations";
-import {
-  eventTypes,
-  eventCapabilities,
-  pastEventsHighlights,
-} from "@/data/events.data";
-import { BLUR_DATA_URL } from "@/lib/constants";
-import { Music, Zap, Briefcase, Star } from "lucide-react";
-import "./EventsModule.styles.css";
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { GlobalNavigation } from '@/components/layout/GlobalNavigation'
+import { SectionHeading } from '@/components/shared/SectionHeading'
+import { CTAButton } from '@/components/shared/CTAButton'
+import { ContactForm } from '@/components/shared/ContactForm'
+import { staggerContainer, staggerItem, VIEWPORT_ONCE } from '@/lib/animations'
+import { eventTypes, pastEventsHighlights } from '@/data/events.data'
+import { BLUR_DATA_URL } from '@/lib/constants'
+import { Music, Zap, Briefcase, Star } from 'lucide-react'
+import './EventsModule.styles.css'
 
 const eventIcons: Record<string, React.ReactNode> = {
   music: <Music size={22} />,
   zap: <Zap size={22} />,
   briefcase: <Briefcase size={22} />,
   star: <Star size={22} />,
-};
+}
 
 export function EventsModule() {
   return (
@@ -66,10 +57,7 @@ export function EventsModule() {
       {/* Venue Cards */}
       <section className="moduleSection" aria-label="Venue capabilities">
         <div className="moduleInner">
-          <SectionHeading
-            label="Venues"
-            title="World-Class Spaces for Every Event"
-          />
+          <SectionHeading label="Venues" title="World-Class Spaces for Every Event" />
           <motion.div
             className="venueGrid"
             variants={staggerContainer}
@@ -78,20 +66,12 @@ export function EventsModule() {
             viewport={VIEWPORT_ONCE}
           >
             {eventTypes.map((event) => (
-              <motion.div
-                key={event.id}
-                className="venueCard"
-                variants={staggerItem}
-              >
-                <div className="venueCardIcon">
-                  {eventIcons[event.icon ?? "star"]}
-                </div>
+              <motion.div key={event.id} className="venueCard" variants={staggerItem}>
+                <div className="venueCardIcon">{eventIcons[event.icon ?? 'star']}</div>
                 <h3 className="venueCardTitle">{event.title}</h3>
                 <p className="venueCardVenue">{event.venueName}</p>
                 <p className="venueCardDesc">{event.description}</p>
-                {event.capacity && (
-                  <span className="venueCardCapacity">{event.capacity}</span>
-                )}
+                {event.capacity && <span className="venueCardCapacity">{event.capacity}</span>}
               </motion.div>
             ))}
           </motion.div>
@@ -99,15 +79,9 @@ export function EventsModule() {
       </section>
 
       {/* Past Events */}
-      <section
-        className="moduleSection moduleSectionAlt"
-        aria-label="Past events"
-      >
+      <section className="moduleSection moduleSectionAlt" aria-label="Past events">
         <div className="moduleInner">
-          <SectionHeading
-            label="Track Record"
-            title="Events That Moved the Needle"
-          />
+          <SectionHeading label="Track Record" title="Events That Moved the Needle" />
           <motion.div
             className="pastEventsGrid"
             variants={staggerContainer}
@@ -116,11 +90,7 @@ export function EventsModule() {
             viewport={VIEWPORT_ONCE}
           >
             {pastEventsHighlights.map((event) => (
-              <motion.div
-                key={event.title}
-                className="pastEventCard"
-                variants={staggerItem}
-              >
+              <motion.div key={event.title} className="pastEventCard" variants={staggerItem}>
                 <div className="pastEventImage">
                   <Image
                     src={event.imageSrc}
@@ -146,11 +116,7 @@ export function EventsModule() {
       </section>
 
       {/* Contact */}
-      <section
-        className="moduleSection"
-        aria-label="Book an event"
-        id="events-contact"
-      >
+      <section className="moduleSection" aria-label="Book an event" id="events-contact">
         <div className="moduleInner moduleContactInner">
           <div>
             <SectionHeading
@@ -163,5 +129,5 @@ export function EventsModule() {
         </div>
       </section>
     </div>
-  );
+  )
 }

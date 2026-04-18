@@ -38,7 +38,7 @@ export function ProgressIndicator() {
             className={cn('progressDot', isActive && 'progressDotActive')}
             onClick={() => scrollToSection(item.href)}
             aria-label={`Navigate to ${item.label}`}
-            aria-current={isActive ? 'true' : undefined}
+            aria-current={isActive ? 'location' : undefined}
             whileTap={{ scale: 0.9 }}
             type="button"
           />

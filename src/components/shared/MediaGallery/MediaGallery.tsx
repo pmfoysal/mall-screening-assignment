@@ -1,43 +1,39 @@
-"use client";
+'use client'
 
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { staggerContainer, staggerItem, VIEWPORT_ONCE } from "@/lib/animations";
-import { BLUR_DATA_URL } from "@/lib/constants";
-import { cn } from "@/lib/utils";
-import "./MediaGallery.styles.css";
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { staggerContainer, staggerItem, VIEWPORT_ONCE } from '@/lib/animations'
+import { BLUR_DATA_URL } from '@/lib/constants'
+import { cn } from '@/lib/utils'
+import './MediaGallery.styles.css'
 
 interface MediaItem {
-  src: string;
-  alt: string;
-  caption?: string;
+  src: string
+  alt: string
+  caption?: string
 }
 
 interface MediaGalleryProps {
-  items: MediaItem[];
-  columns?: 2 | 3 | 4;
-  className?: string;
+  items: MediaItem[]
+  columns?: 2 | 3 | 4
+  className?: string
 }
 
-export function MediaGallery({
-  items,
-  columns = 3,
-  className,
-}: MediaGalleryProps) {
-  const colClass = { 2: "gallery-2", 3: "gallery-3", 4: "gallery-4" }[columns];
+export function MediaGallery({ items, columns = 3, className }: MediaGalleryProps) {
+  const colClass = { 2: 'gallery-2', 3: 'gallery-3', 4: 'gallery-4' }[columns]
 
   return (
     <motion.div
-      className={cn("mediaGallery", colClass, className)}
+      className={cn('mediaGallery', colClass, className)}
       variants={staggerContainer}
       initial="hidden"
       whileInView="visible"
       viewport={VIEWPORT_ONCE}
       role="list"
     >
-      {items.map((item, i) => (
+      {items.map((item) => (
         <motion.figure
-          key={i}
+          key={item.src}
           className="galleryItem"
           variants={staggerItem}
           role="listitem"
@@ -53,11 +49,9 @@ export function MediaGallery({
               blurDataURL={BLUR_DATA_URL}
             />
           </div>
-          {item.caption && (
-            <figcaption className="galleryCaption">{item.caption}</figcaption>
-          )}
+          {item.caption && <figcaption className="galleryCaption">{item.caption}</figcaption>}
         </motion.figure>
       ))}
     </motion.div>
-  );
+  )
 }

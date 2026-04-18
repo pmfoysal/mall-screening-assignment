@@ -1,19 +1,19 @@
-"use client";
+'use client'
 
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { SectionContainer } from "@/components/layout/SectionContainer";
-import { CTAButton } from "@/components/shared/CTAButton";
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { SectionContainer } from '@/components/layout/SectionContainer'
+import { CTAButton } from '@/components/shared/CTAButton'
 import {
   luxuryFadeIn,
   slideInLeft,
   slideInRight,
   VIEWPORT_ONCE,
   VIEWPORT_ONCE_HALF,
-} from "@/lib/animations";
-import { luxuryBrands } from "@/data/luxury.data";
-import { BLUR_DATA_URL } from "@/lib/constants";
-import "./LuxurySection.styles.css";
+} from '@/lib/animations'
+import { luxuryBrands } from '@/data/luxury.data'
+import { BLUR_DATA_URL } from '@/lib/constants'
+import './LuxurySection.styles.css'
 
 /**
  * Luxury wing section — premium design treatment with slow transitions,
@@ -68,17 +68,16 @@ export function LuxurySection() {
             whileInView="visible"
             viewport={VIEWPORT_ONCE}
             style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "var(--space-8)",
-              justifyContent: "center",
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 'var(--space-8)',
+              justifyContent: 'center',
             }}
           >
             <p className="luxuryBody">
-              A dedicated luxury floor featuring the world's most coveted brands
-              — from Hermès to Dior — in an environment that matches their
-              prestige. The only destination in North America where these houses
-              exist side-by-side, steps from New York City.
+              A dedicated luxury floor featuring the world&apos;s most coveted brands — from Hermès
+              to Dior — in an environment that matches their prestige. The only destination in North
+              America where these houses exist side-by-side, steps from New York City.
             </p>
             <CTAButton variant="outline-gold" href="/leasing/luxury" size="md">
               Access Luxury Leasing
@@ -94,11 +93,7 @@ export function LuxurySection() {
           whileInView="visible"
           viewport={VIEWPORT_ONCE}
         >
-          <div
-            className="brandCarouselInner"
-            role="list"
-            aria-label="Featured luxury brands"
-          >
+          <div className="brandCarouselInner" role="list" aria-label="Featured luxury brands">
             {luxuryBrands.map((brand) => (
               <div key={brand.id} className="brandFeatureCard" role="listitem">
                 <div className="brandFeatureImage">
@@ -113,9 +108,7 @@ export function LuxurySection() {
                   />
                 </div>
                 <div className="brandFeatureOverlay">
-                  {brand.founded && (
-                    <p className="brandFoundedBadge">Est. {brand.founded}</p>
-                  )}
+                  {brand.founded && <p className="brandFoundedBadge">Est. {brand.founded}</p>}
                   <h3 className="brandFeatureName">{brand.name}</h3>
                   <p className="brandFeatureTagline">{brand.tagline}</p>
                 </div>
@@ -134,15 +127,15 @@ export function LuxurySection() {
         >
           <div className="luxuryGoldDivider" aria-hidden="true" />
           <blockquote className="luxuryPositioningQuote">
-            "The only destination in North America that rivals the world's great
-            luxury capitals."
+            &ldquo;The only destination in North America that rivals the world&apos;s great luxury
+            capitals.&rdquo;
           </blockquote>
           <p className="luxuryPositioningSub">
-            Adjacent to Manhattan. Home to the world's top luxury brands.
+            Adjacent to Manhattan. Home to the world&apos;s top luxury brands.
           </p>
           <div className="luxuryGoldDivider" aria-hidden="true" />
         </motion.div>
       </div>
     </SectionContainer>
-  );
+  )
 }

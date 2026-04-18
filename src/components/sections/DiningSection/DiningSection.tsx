@@ -110,8 +110,8 @@ export function DiningSection() {
             viewport={VIEWPORT_ONCE}
           >
             <p className="dwellMessageQuote">
-              "Dining at American Dream isn't just a meal — it's the reason people stay for 6 hours,
-              not 2."
+              &ldquo;Dining at American Dream isn&apos;t just a meal — it&apos;s the reason people
+              stay for 6 hours, not 2.&rdquo;
             </p>
             <p className="dwellMessageSub">
               Average dwell time: 4.2 hours · Dining conversion: 78% of visitors

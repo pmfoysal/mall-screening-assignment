@@ -1,14 +1,10 @@
-"use client";
+'use client'
 
-import { motion } from "framer-motion";
-import { ContactForm } from "@/components/shared/ContactForm";
-import {
-  fadeInUp,
-  slideInLeft,
-  slideInRight,
-  VIEWPORT_ONCE,
-} from "@/lib/animations";
-import "./CallToActionClose.styles.css";
+import Link from 'next/link'
+import { motion } from 'framer-motion'
+import { ContactForm } from '@/components/shared/ContactForm'
+import { slideInLeft, slideInRight, VIEWPORT_ONCE } from '@/lib/animations'
+import './CallToActionClose.styles.css'
 
 /**
  * Final CTA section at the bottom of the page.
@@ -33,16 +29,18 @@ export function CallToActionClose() {
               Part of This?
             </h2>
             <p className="ctaCloseSubtitle">
-              Connect with our commercial team to explore leasing, sponsorship,
-              and event opportunities at American Dream.
+              Connect with our commercial team to explore leasing, sponsorship, and event
+              opportunities at American Dream.
             </p>
 
             <div className="ctaCloseContact">
               <p className="ctaCloseContactLabel">Commercial Inquiries</p>
-              <p className="ctaCloseContactInfo">
+              <a href="mailto:commercial@americandream.com" className="ctaCloseContactInfo">
                 commercial@americandream.com
-              </p>
-              <p className="ctaCloseContactInfo">+1 (201) 559-3308</p>
+              </a>
+              <a href="tel:+12015593308" className="ctaCloseContactInfo">
+                +1 (201) 559-3308
+              </a>
             </div>
           </motion.div>
 
@@ -66,18 +64,18 @@ export function CallToActionClose() {
             © {new Date().getFullYear()} American Dream. All rights reserved.
           </p>
           <nav className="footerLinks" aria-label="Footer navigation">
-            <a className="footerLink" href="/leasing">
+            <Link className="footerLink" href="/leasing">
               Leasing
-            </a>
-            <a className="footerLink" href="/events">
+            </Link>
+            <Link className="footerLink" href="/events">
               Events
-            </a>
-            <a className="footerLink" href="/sponsorship">
+            </Link>
+            <Link className="footerLink" href="/sponsorship">
               Sponsorship
-            </a>
+            </Link>
           </nav>
         </div>
       </div>
     </div>
-  );
+  )
 }

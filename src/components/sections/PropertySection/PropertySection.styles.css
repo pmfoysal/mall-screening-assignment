@@ -56,6 +56,13 @@
   gap: var(--space-6);
 }
 
+/* Map zone cards list — child of propertyMapContent */
+.propertyMapZones {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
 /* SVG map zones */
 .mapZone {
   cursor: pointer;

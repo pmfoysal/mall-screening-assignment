@@ -1,9 +1,9 @@
-"use client";
+'use client'
 
-import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
-import "./CTAButton.styles.css";
-import type { CTAButtonProps } from "./CTAButton.types";
+import { motion } from 'framer-motion'
+import { cn } from '@/lib/utils'
+import './CTAButton.styles.css'
+import type { CTAButtonProps } from './CTAButton.types'
 
 /**
  * Full-featured CTA button component.
@@ -14,58 +14,59 @@ export function CTAButton({
   children,
   href,
   onClick,
-  variant = "primary",
-  size = "md",
+  variant = 'primary',
+  size = 'md',
   external = false,
   className,
   ariaLabel,
   isLoading = false,
   disabled = false,
   icon,
-  iconPosition = "right",
+  iconPosition = 'right',
 }: CTAButtonProps) {
   const variantClass = {
-    primary: "ctaPrimary",
-    secondary: "ctaSecondary",
-    ghost: "ctaGhost",
-    glow: "ctaGlow",
-    dark: "ctaDark",
-    "outline-gold": "ctaOutlineGold",
-  }[variant];
+    primary: 'ctaPrimary',
+    secondary: 'ctaSecondary',
+    ghost: 'ctaGhost',
+    glow: 'ctaGlow',
+    dark: 'ctaDark',
+    'outline-gold': 'ctaOutlineGold',
+  }[variant]
 
   const sizeClass = {
-    sm: "ctaSm",
-    md: "ctaMd",
-    lg: "ctaLg",
-  }[size];
+    sm: 'ctaSm',
+    md: 'ctaMd',
+    lg: 'ctaLg',
+  }[size]
 
-  const baseClass = cn("ctaButton", variantClass, sizeClass, className);
-  const isDisabled = disabled || isLoading;
-  const externalProps = external
-    ? { target: "_blank", rel: "noopener noreferrer" }
-    : {};
+  const baseClass = cn('ctaButton', variantClass, sizeClass, className)
+  const isDisabled = disabled || isLoading
+  const externalProps = external ? { target: '_blank', rel: 'noopener noreferrer' } : {}
 
   const content = (
     <>
       {isLoading && <span className="ctaSpinner" aria-hidden="true" />}
-      {!isLoading && icon && iconPosition === "left" && icon}
+      {!isLoading && icon && iconPosition === 'left' && icon}
       <span>{children}</span>
-      {!isLoading && icon && iconPosition === "right" && icon}
+      {!isLoading && icon && iconPosition === 'right' && icon}
     </>
-  );
+  )
 
-  if (href && !isDisabled) {
+  if (href) {
     return (
       <motion.a
-        href={href}
+        href={isDisabled ? undefined : href}
         className={baseClass}
         aria-label={ariaLabel}
-        whileTap={{ scale: 0.97 }}
-        {...externalProps}
+        aria-disabled={isDisabled ? true : undefined}
+        tabIndex={isDisabled ? -1 : undefined}
+        onClick={isDisabled ? (e) => e.preventDefault() : undefined}
+        whileTap={{ scale: isDisabled ? 1 : 0.97 }}
+        {...(isDisabled ? {} : externalProps)}
       >
         {content}
       </motion.a>
-    );
+    )
   }
 
   return (
@@ -80,5 +81,5 @@ export function CTAButton({
     >
       {content}
     </motion.button>
-  );
+  )
 }

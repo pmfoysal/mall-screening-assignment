@@ -86,7 +86,7 @@ export function GlobalNavigation({ className }: GlobalNavigationProps) {
                   className={cn('navLink', activeSection === item.id && 'navLinkActive')}
                   onClick={() => scrollToSection(item.href)}
                   aria-label={`Navigate to ${item.label} section`}
-                  aria-current={activeSection === item.id ? 'true' : undefined}
+                  aria-current={activeSection === item.id ? 'location' : undefined}
                 >
                   {item.label}
                   {activeSection === item.id && (
@@ -176,7 +176,7 @@ export function GlobalNavigation({ className }: GlobalNavigationProps) {
                     duration: 0.4,
                     ease: [0.22, 1, 0.36, 1],
                   }}
-                  aria-current={activeSection === item.id ? 'true' : undefined}
+                  aria-current={activeSection === item.id ? 'location' : undefined}
                 >
                   {item.label}
                   <ArrowRight size={20} aria-hidden="true" />
