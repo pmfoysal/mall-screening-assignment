@@ -1,29 +1,24 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { SectionContainer } from "@/components/layout/SectionContainer";
-import { SectionHeading } from "@/components/shared/SectionHeading";
-import { BrandLogoGrid } from "@/components/shared/BrandLogoGrid";
-import { CTAButton } from "@/components/shared/CTAButton";
-import {
-  fadeInUp,
-  staggerContainer,
-  staggerItem,
-  VIEWPORT_ONCE,
-} from "@/lib/animations";
-import { retailBrands, retailCategories } from "@/data/retail.data";
-import { cn } from "@/lib/utils";
-import type { RetailCategory } from "@/types/sections.types";
-import "./RetailSection.styles.css";
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { SectionContainer } from '@/components/layout/SectionContainer'
+import { SectionHeading } from '@/components/shared/SectionHeading'
+import { BrandLogoGrid } from '@/components/shared/BrandLogoGrid'
+import { CTAButton } from '@/components/shared/CTAButton'
+import { fadeInUp, staggerContainer, staggerItem, VIEWPORT_ONCE } from '@/lib/animations'
+import { retailBrands, retailCategories } from '@/data/retail.data'
+import { cn } from '@/lib/utils'
+import type { RetailCategory } from '@/types/sections.types'
+import './RetailSection.styles.css'
 
-type ActiveCategory = RetailCategory | "all";
+type ActiveCategory = RetailCategory | 'all'
 
 /**
  * Retail ecosystem section — filterable brand logo grid with category tabs.
  */
 export function RetailSection() {
-  const [activeCategory, setActiveCategory] = useState<ActiveCategory>("all");
+  const [activeCategory, setActiveCategory] = useState<ActiveCategory>('all')
 
   return (
     <SectionContainer id="retail" label="The Retail Ecosystem">
@@ -50,10 +45,7 @@ export function RetailSection() {
                 key={cat.id}
                 role="tab"
                 aria-selected={activeCategory === cat.id}
-                className={cn(
-                  "categoryTab",
-                  activeCategory === cat.id && "categoryTabActive",
-                )}
+                className={cn('categoryTab', activeCategory === cat.id && 'categoryTabActive')}
                 onClick={() => setActiveCategory(cat.id)}
                 type="button"
               >
@@ -69,12 +61,7 @@ export function RetailSection() {
             whileInView="visible"
             viewport={VIEWPORT_ONCE}
           >
-            <BrandLogoGrid
-              brands={
-                retailBrands as unknown as import("@/types/sections.types").BrandItem[]
-              }
-              activeCategory={activeCategory}
-            />
+            <BrandLogoGrid brands={retailBrands} activeCategory={activeCategory} />
           </motion.div>
 
           {/* Growth Block */}
@@ -100,11 +87,11 @@ export function RetailSection() {
         </div>
       </div>
     </SectionContainer>
-  );
+  )
 }
 
 const growthMetrics = [
-  { value: "98%", label: "Occupancy Rate" },
-  { value: "40%", label: "Premium Brands" },
-  { value: "12", label: "New Flagships 2024" },
-] as const;
+  { value: '98%', label: 'Occupancy Rate' },
+  { value: '40%', label: 'Premium Brands' },
+  { value: '12', label: 'New Flagships 2024' },
+] as const

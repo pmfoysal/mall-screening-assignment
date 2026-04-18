@@ -1,7 +1,8 @@
-import type { BrandItem, RetailCategory } from "@/types/sections.types";
+import type { BrandItem, RetailCategory } from '@/types/sections.types'
 
 export interface BrandLogoGridProps {
-  brands: BrandItem[];
-  activeCategory?: RetailCategory | "all";
-  className?: string;
+  // Accept both readonly (from data files with `as const`) and mutable arrays
+  brands: readonly BrandItem[] | BrandItem[]
+  activeCategory?: RetailCategory | 'all'
+  className?: string
 }
