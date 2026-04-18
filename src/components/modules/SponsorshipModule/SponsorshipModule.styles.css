@@ -1,0 +1,232 @@
+.sponsorshipModule {
+  background-color: var(--color-canvas);
+  min-height: 100vh;
+}
+
+.moduleHero {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.moduleHeroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    oklch(5% 0 0 / 0.85) 0%,
+    oklch(5% 0 0 / 0.4) 60%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+.moduleHeroContent {
+  position: relative;
+  z-index: 10;
+  padding: var(--section-padding-x);
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  width: 100%;
+  padding-top: calc(72px + var(--space-10));
+}
+
+.moduleBackLink {
+  padding: var(--space-6) var(--section-padding-x);
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+.moduleSection {
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.moduleSectionAlt {
+  background-color: var(--color-surface);
+}
+
+.moduleInner {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.audienceGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .audienceGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.audienceStat {
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.audienceStatValue {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 300;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.audienceStatLabel {
+  font-family: var(--font-body);
+  font-size: var(--text-label);
+  color: var(--color-text-muted);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tiersGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .tiersGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.tierCard {
+  padding: var(--space-8);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  position: relative;
+}
+
+.tierCardHighlighted {
+  border-color: var(--color-gold);
+  background: oklch(72% 0.12 75 / 0.04);
+}
+
+.tierHighlightBadge {
+  position: absolute;
+  top: -12px;
+  left: var(--space-8);
+  background-color: var(--color-gold);
+  color: oklch(7% 0.01 264);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2em 0.75em;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+}
+
+.tierName {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 300;
+  color: var(--color-text-primary);
+}
+
+.tierDesc {
+  font-size: var(--text-body-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  font-family: var(--font-body);
+}
+
+.tierBenefits {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.tierBenefit {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  line-height: 1.4;
+}
+
+.tierBenefitIcon {
+  color: var(--color-gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.activationsGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .activationsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.activationCard {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.activationImage {
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+
+.activationInfo {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.activationBrand {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--color-text-primary);
+}
+
+.activationDesc {
+  font-size: var(--text-body-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  font-family: var(--font-body);
+}
+
+.moduleContactInner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+}
+
+@media (min-width: 1024px) {
+  .moduleContactInner {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
