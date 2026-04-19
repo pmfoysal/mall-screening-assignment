@@ -1,136 +1,131 @@
 .ctaClose {
-  background-color: oklch(5% 0 0);
-  padding: var(--section-padding-y) var(--section-padding-x);
-  position: relative;
-  overflow: hidden;
+   background-color: oklch(5% 0 0);
+   padding: var(--section-padding-y) var(--section-padding-x);
+   position: relative;
+   overflow: hidden;
 }
 
 /* Gold diagonal accent */
 .ctaClose::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    var(--color-gold),
-    transparent
-  );
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   height: 1px;
+   background: linear-gradient(to right, transparent, var(--color-gold), transparent);
 }
 
 .ctaCloseInner {
-  max-width: var(--container-xl);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-16);
+   max-width: var(--container-xl);
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: var(--space-10);
 }
 
 @media (min-width: 1024px) {
-  .ctaCloseInner {
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-    gap: var(--space-20);
-  }
+   .ctaCloseInner {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+      gap: var(--space-16);
+   }
 }
 
 .ctaCloseLeft {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
+   display: flex;
+   flex-direction: column;
+   gap: var(--space-6);
 }
 
 .ctaCloseTitle {
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5vw, 5.5rem);
-  font-weight: 300;
-  line-height: 0.95;
-  letter-spacing: -0.04em;
-  color: white;
+   font-family: var(--font-display);
+   font-size: clamp(2.5rem, 5vw, 5.5rem);
+   font-weight: 300;
+   line-height: 0.95;
+   letter-spacing: -0.04em;
+   color: white;
 }
 
 .ctaCloseSubtitle {
-  font-family: var(--font-body);
-  font-size: var(--text-body-xl);
-  font-weight: 300;
-  color: oklch(100% 0 0 / 0.6);
-  line-height: 1.6;
-  max-width: 44ch;
+   font-family: var(--font-body);
+   font-size: var(--text-body-xl);
+   font-weight: 300;
+   color: oklch(100% 0 0 / 0.6);
+   line-height: 1.6;
+   max-width: 44ch;
 }
 
 .ctaCloseContact {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
+   display: flex;
+   flex-direction: column;
+   gap: var(--space-2);
 }
 
 .ctaCloseContactLabel {
-  font-size: var(--text-label);
-  font-family: var(--font-body);
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--color-gold);
+   font-size: var(--text-label);
+   font-family: var(--font-body);
+   font-weight: 500;
+   letter-spacing: 0.15em;
+   text-transform: uppercase;
+   color: var(--color-gold);
 }
 
 .ctaCloseContactInfo {
-  font-size: var(--text-body-lg);
-  font-family: var(--font-body);
-  color: oklch(100% 0 0 / 0.8);
+   font-size: var(--text-body-lg);
+   font-family: var(--font-body);
+   color: oklch(100% 0 0 / 0.8);
 }
 
 /* Footer bar */
 .footerBar {
-  border-top: 1px solid oklch(100% 0 0 / 0.06);
-  padding-top: var(--space-8);
-  margin-top: var(--space-8);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
+   border-top: 1px solid oklch(100% 0 0 / 0.06);
+   padding-top: var(--space-6);
+   margin-top: var(--space-6);
+   display: flex;
+   flex-direction: column;
+   gap: var(--space-4);
 }
 
 @media (min-width: 640px) {
-  .footerBar {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
+   .footerBar {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+   }
 }
 
 .footerLogo {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: oklch(100% 0 0 / 0.5);
+   font-family: var(--font-display);
+   font-size: 1rem;
+   letter-spacing: 0.08em;
+   text-transform: uppercase;
+   color: oklch(100% 0 0 / 0.5);
 }
 
 .footerLogoAccent {
-  color: var(--color-gold);
+   color: var(--color-gold);
 }
 
 .footerCopyright {
-  font-family: var(--font-body);
-  font-size: var(--text-body-sm);
-  color: oklch(100% 0 0 / 0.35);
+   font-family: var(--font-body);
+   font-size: var(--text-body-sm);
+   color: oklch(100% 0 0 / 0.35);
 }
 
 .footerLinks {
-  display: flex;
-  gap: var(--space-6);
+   display: flex;
+   gap: var(--space-6);
 }
 
 .footerLink {
-  font-family: var(--font-body);
-  font-size: var(--text-body-sm);
-  color: oklch(100% 0 0 / 0.4);
-  text-decoration: none;
-  transition: color var(--duration-fast) var(--ease-out);
+   font-family: var(--font-body);
+   font-size: var(--text-body-sm);
+   color: oklch(100% 0 0 / 0.4);
+   text-decoration: none;
+   transition: color var(--duration-fast) var(--ease-out);
 }
 
 .footerLink:hover {
-  color: var(--color-gold);
+   color: var(--color-gold);
 }
