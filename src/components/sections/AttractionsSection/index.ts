@@ -1,2 +1,2 @@
-export { AttractionsSection } from "./AttractionsSection";
-export type { AttractionsSectionProps } from "./AttractionsSection.types";
+export { AttractionsSection } from './AttractionsSection'
+export type { AttractionsSectionProps } from './AttractionsSection.types'

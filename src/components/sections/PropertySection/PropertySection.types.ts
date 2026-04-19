@@ -1,3 +1,3 @@
 export interface PropertySectionProps {
-  className?: string;
+   className?: string
 }

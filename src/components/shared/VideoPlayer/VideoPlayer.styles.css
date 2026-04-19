@@ -1,100 +1,100 @@
 .videoContainer {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: var(--color-canvas);
+   position: relative;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   background-color: var(--color-canvas);
 }
 
 .videoElement {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: opacity var(--duration-slow) var(--ease-out);
+   position: absolute;
+   inset: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   transition: opacity var(--duration-slow) var(--ease-out);
 }
 
 .videoLoading {
-  opacity: 0;
+   opacity: 0;
 }
 
 .videoLoaded {
-  opacity: 1;
+   opacity: 1;
 }
 
 .videoSkeleton {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+   position: absolute;
+   inset: 0;
+   width: 100%;
+   height: 100%;
 }
 
 .videoErrorState {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-4);
-  background-color: var(--color-surface-muted);
-  color: var(--color-text-muted);
+   position: absolute;
+   inset: 0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: var(--space-4);
+   background-color: var(--color-surface-muted);
+   color: var(--color-text-muted);
 }
 
 .videoErrorIcon {
-  opacity: 0.4;
+   opacity: 0.4;
 }
 
 .videoErrorMessage {
-  font-size: var(--text-body-sm);
-  font-family: var(--font-body);
+   font-size: var(--text-body-sm);
+   font-family: var(--font-body);
 }
 
 .videoRetryButton {
-  font-size: var(--text-label);
-  font-family: var(--font-body);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-gold);
-  cursor: pointer;
-  border: 1px solid var(--color-gold);
-  padding: var(--space-2) var(--space-4);
-  border-radius: var(--radius-full);
-  background: transparent;
-  transition: all var(--duration-fast) var(--ease-out);
+   font-size: var(--text-label);
+   font-family: var(--font-body);
+   letter-spacing: 0.08em;
+   text-transform: uppercase;
+   color: var(--color-gold);
+   cursor: pointer;
+   border: 1px solid var(--color-gold);
+   padding: var(--space-2) var(--space-4);
+   border-radius: var(--radius-full);
+   background: transparent;
+   transition: all var(--duration-fast) var(--ease-out);
 }
 
 .videoRetryButton:hover {
-  background-color: oklch(72% 0.12 75 / 0.1);
+   background-color: oklch(72% 0.12 75 / 0.1);
 }
 
 .videoMuteToggle {
-  position: absolute;
-  bottom: var(--space-4);
-  right: var(--space-4);
-  z-index: var(--z-raised);
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-full);
-  background: oklch(0% 0 0 / 0.4);
-  backdrop-filter: blur(8px);
-  border: 1px solid oklch(100% 0 0 / 0.2);
-  color: white;
-  cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-out);
-  opacity: 0;
+   position: absolute;
+   bottom: var(--space-4);
+   right: var(--space-4);
+   z-index: var(--z-raised);
+   width: 36px;
+   height: 36px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: var(--radius-full);
+   background: oklch(0% 0 0 / 0.4);
+   backdrop-filter: blur(8px);
+   border: 1px solid oklch(100% 0 0 / 0.2);
+   color: white;
+   cursor: pointer;
+   transition: all var(--duration-fast) var(--ease-out);
+   opacity: 0;
 }
 
 .videoContainer:hover .videoMuteToggle {
-  opacity: 1;
+   opacity: 1;
 }
 
 .videoMuteToggle:hover {
-  background: oklch(0% 0 0 / 0.6);
-  border-color: var(--color-gold);
-  color: var(--color-gold);
+   background: oklch(0% 0 0 / 0.6);
+   border-color: var(--color-gold);
+   color: var(--color-gold);
 }

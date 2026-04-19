@@ -1,3 +1,3 @@
 export interface SponsorshipModuleProps {
-  className?: string;
+   className?: string
 }

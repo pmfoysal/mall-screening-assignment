@@ -1,3 +1,3 @@
 export interface LuxurySectionProps {
-  className?: string;
+   className?: string
 }

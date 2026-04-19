@@ -1,2 +1,2 @@
-export { EventsModule } from "./EventsModule";
-export type { EventsModuleProps } from "./EventsModule.types";
+export { EventsModule } from './EventsModule'
+export type { EventsModuleProps } from './EventsModule.types'

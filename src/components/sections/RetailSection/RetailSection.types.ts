@@ -1,3 +1,3 @@
 export interface RetailSectionProps {
-  className?: string;
+   className?: string
 }

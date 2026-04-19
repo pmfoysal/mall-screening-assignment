@@ -1,3 +1,3 @@
 export interface EventsModuleProps {
-  className?: string;
+   className?: string
 }

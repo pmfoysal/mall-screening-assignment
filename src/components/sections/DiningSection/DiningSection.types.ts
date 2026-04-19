@@ -1,3 +1,3 @@
 export interface DiningSectionProps {
-  className?: string;
+   className?: string
 }

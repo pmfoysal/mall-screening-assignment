@@ -1,11 +1,11 @@
-import { create } from "zustand";
-import type { MediaState } from "@/types/media.types";
+import { create } from 'zustand'
+import type { MediaState } from '@/types/media.types'
 
 export const useMediaStore = create<MediaState>()((set) => ({
-  globalMuted: true,
-  heroVideoLoaded: false,
+   globalMuted: true,
+   heroVideoLoaded: false,
 
-  setMuted: (muted: boolean) => set({ globalMuted: muted }),
+   setMuted: (muted: boolean) => set({ globalMuted: muted }),
 
-  setHeroVideoLoaded: (loaded: boolean) => set({ heroVideoLoaded: loaded }),
-}));
+   setHeroVideoLoaded: (loaded: boolean) => set({ heroVideoLoaded: loaded }),
+}))

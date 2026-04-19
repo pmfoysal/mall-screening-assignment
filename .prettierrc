@@ -2,8 +2,8 @@
   "semi": false,
   "singleQuote": true,
   "trailingComma": "es5",
-  "tabWidth": 2,
-  "printWidth": 100,
+  "tabWidth": 3,
+  "printWidth": 120,
   "bracketSpacing": true,
   "arrowParens": "always"
 }

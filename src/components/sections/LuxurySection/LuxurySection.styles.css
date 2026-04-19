@@ -1,214 +1,209 @@
 .luxurySection {
-  position: relative;
-  background-color: oklch(8% 0.02 45); /* warm near-black */
-  overflow: hidden;
-  padding: var(--section-padding-y) 0;
+   position: relative;
+   background-color: oklch(8% 0.02 45); /* warm near-black */
+   overflow: hidden;
+   padding: var(--section-padding-y) 0;
 }
 
 /* Hero image at top */
 .luxuryHeroImage {
-  position: relative;
-  width: 100%;
-  height: clamp(350px, 50vw, 600px);
-  overflow: hidden;
+   position: relative;
+   width: 100%;
+   height: clamp(350px, 50vw, 600px);
+   overflow: hidden;
 }
 
 .luxuryHeroOverlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    oklch(8% 0.02 45 / 0.4) 0%,
-    oklch(8% 0.02 45 / 0.1) 40%,
-    oklch(8% 0.02 45 / 0.8) 100%
-  );
-  z-index: 1;
+   position: absolute;
+   inset: 0;
+   background: linear-gradient(
+      to bottom,
+      oklch(8% 0.02 45 / 0.4) 0%,
+      oklch(8% 0.02 45 / 0.1) 40%,
+      oklch(8% 0.02 45 / 0.8) 100%
+   );
+   z-index: 1;
 }
 
 /* Text block */
 .luxuryTextBlock {
-  padding: var(--space-16) var(--section-padding-x);
-  max-width: var(--container-xl);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-12);
+   padding: var(--space-16) var(--section-padding-x);
+   max-width: var(--container-xl);
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: var(--space-12);
 }
 
 @media (min-width: 1024px) {
-  .luxuryTextBlock {
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-  }
+   .luxuryTextBlock {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+   }
 }
 
 .luxuryTitle {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 6vw, 7rem);
-  font-weight: 300;
-  line-height: 0.93;
-  letter-spacing: -0.04em;
-  color: oklch(97% 0.005 45);
+   font-family: var(--font-display);
+   font-size: clamp(3rem, 6vw, 7rem);
+   font-weight: 300;
+   line-height: 0.93;
+   letter-spacing: -0.04em;
+   color: oklch(97% 0.005 45);
 }
 
 .luxuryTitle em {
-  font-style: italic;
-  color: var(--color-gold-light);
+   font-style: italic;
+   color: var(--color-gold-light);
 }
 
 .luxuryBody {
-  font-family: var(--font-body);
-  font-size: var(--text-body-xl);
-  font-weight: 300;
-  color: oklch(100% 0 0 / 0.62);
-  line-height: 1.7;
-  max-width: 42ch;
+   font-family: var(--font-body);
+   font-size: var(--text-body-xl);
+   font-weight: 300;
+   color: oklch(100% 0 0 / 0.62);
+   line-height: 1.7;
+   max-width: 42ch;
 }
 
 .luxuryLabel {
-  font-family: var(--font-body);
-  font-size: var(--text-label);
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-gold);
-  margin-bottom: var(--space-6);
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
+   font-family: var(--font-body);
+   font-size: var(--text-label);
+   font-weight: 500;
+   letter-spacing: 0.2em;
+   text-transform: uppercase;
+   color: var(--color-gold);
+   margin-bottom: var(--space-6);
+   display: flex;
+   align-items: center;
+   gap: var(--space-3);
 }
 
 .luxuryLabel::before {
-  content: '';
-  width: 24px;
-  height: 1px;
-  background-color: var(--color-gold);
-  flex-shrink: 0;
+   content: '';
+   width: 24px;
+   height: 1px;
+   background-color: var(--color-gold);
+   flex-shrink: 0;
 }
 
 /* Right text block in luxury section */
 .luxuryTextBlockRight {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-8);
-  justify-content: center;
+   display: flex;
+   flex-direction: column;
+   gap: var(--space-8);
+   justify-content: center;
 }
 
 /* Brand carousel */
 .brandCarousel {
-  padding: 0 var(--section-padding-x);
-  overflow: hidden;
+   padding: 0 var(--section-padding-x);
+   overflow: hidden;
 }
 
 .brandCarouselInner {
-  display: flex;
-  gap: var(--space-4);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding-bottom: var(--space-4);
-  cursor: grab;
+   display: flex;
+   gap: var(--space-4);
+   overflow-x: auto;
+   scroll-snap-type: x mandatory;
+   -webkit-overflow-scrolling: touch;
+   scrollbar-width: none;
+   padding-bottom: var(--space-4);
+   cursor: grab;
 }
 
 .brandCarouselInner::-webkit-scrollbar {
-  display: none;
+   display: none;
 }
 
 .brandCarouselInner:active {
-  cursor: grabbing;
+   cursor: grabbing;
 }
 
 .brandFeatureCard {
-  flex: 0 0 clamp(280px, 30vw, 380px);
-  scroll-snap-align: start;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  position: relative;
-  aspect-ratio: 3 / 4;
-  background-color: oklch(15% 0.02 45);
-  border: 1px solid oklch(100% 0 0 / 0.06);
+   flex: 0 0 clamp(280px, 30vw, 380px);
+   scroll-snap-align: start;
+   border-radius: var(--radius-xl);
+   overflow: hidden;
+   position: relative;
+   aspect-ratio: 3 / 4;
+   background-color: oklch(15% 0.02 45);
+   border: 1px solid oklch(100% 0 0 / 0.06);
 }
 
 .brandFeatureImage {
-  position: absolute;
-  inset: 0;
-  transition: transform var(--duration-slower) var(--ease-luxury);
+   position: absolute;
+   inset: 0;
+   transition: transform var(--duration-slower) var(--ease-luxury);
 }
 
 .brandFeatureCard:hover .brandFeatureImage {
-  transform: scale(1.04);
+   transform: scale(1.04);
 }
 
 .brandFeatureOverlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: var(--space-8);
-  background: linear-gradient(
-    to top,
-    oklch(5% 0 0 / 0.95) 0%,
-    oklch(5% 0 0 / 0.3) 60%,
-    transparent 100%
-  );
-  z-index: 2;
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   padding: var(--space-8);
+   background: linear-gradient(to top, oklch(5% 0 0 / 0.95) 0%, oklch(5% 0 0 / 0.3) 60%, transparent 100%);
+   z-index: 2;
 }
 
 .brandFeatureName {
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  font-weight: 300;
-  letter-spacing: -0.02em;
-  color: white;
-  margin-bottom: var(--space-2);
+   font-family: var(--font-display);
+   font-size: clamp(1.5rem, 3vw, 2.5rem);
+   font-weight: 300;
+   letter-spacing: -0.02em;
+   color: white;
+   margin-bottom: var(--space-2);
 }
 
 .brandFeatureTagline {
-  font-family: var(--font-body);
-  font-size: var(--text-body-sm);
-  color: oklch(100% 0 0 / 0.6);
-  letter-spacing: 0.03em;
+   font-family: var(--font-body);
+   font-size: var(--text-body-sm);
+   color: oklch(100% 0 0 / 0.6);
+   letter-spacing: 0.03em;
 }
 
 .brandFoundedBadge {
-  font-family: var(--font-body);
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--color-gold);
-  margin-bottom: var(--space-3);
+   font-family: var(--font-body);
+   font-size: 0.65rem;
+   letter-spacing: 0.15em;
+   text-transform: uppercase;
+   color: var(--color-gold);
+   margin-bottom: var(--space-3);
 }
 
 /* Positioning block */
 .luxuryPositioning {
-  text-align: center;
-  padding: var(--space-20) var(--section-padding-x);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-6);
+   text-align: center;
+   padding: var(--space-20) var(--section-padding-x);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: var(--space-6);
 }
 
 .luxuryPositioningQuote {
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  font-weight: 300;
-  font-style: italic;
-  letter-spacing: -0.02em;
-  color: oklch(97% 0.005 45);
-  max-width: 36ch;
-  line-height: 1.2;
+   font-family: var(--font-display);
+   font-size: clamp(1.5rem, 3vw, 2.5rem);
+   font-weight: 300;
+   font-style: italic;
+   letter-spacing: -0.02em;
+   color: oklch(97% 0.005 45);
+   max-width: 36ch;
+   line-height: 1.2;
 }
 
 .luxuryPositioningSub {
-  font-family: var(--font-body);
-  font-size: var(--text-body-md);
-  color: oklch(100% 0 0 / 0.55);
+   font-family: var(--font-body);
+   font-size: var(--text-body-md);
+   color: oklch(100% 0 0 / 0.55);
 }
 
 .luxuryGoldDivider {
-  width: 48px;
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+   width: 48px;
+   height: 1px;
+   background: linear-gradient(to right, transparent, var(--color-gold), transparent);
 }

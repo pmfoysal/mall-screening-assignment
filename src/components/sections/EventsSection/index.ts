@@ -1,2 +1,2 @@
-export { EventsSection } from "./EventsSection";
-export type { EventsSectionProps } from "./EventsSection.types";
+export { EventsSection } from './EventsSection'
+export type { EventsSectionProps } from './EventsSection.types'

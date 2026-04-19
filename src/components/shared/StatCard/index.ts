@@ -1,2 +1,2 @@
-export { StatCard } from "./StatCard";
-export type { StatCardProps } from "./StatCard.types";
+export { StatCard } from './StatCard'
+export type { StatCardProps } from './StatCard.types'

@@ -1,1 +1,1 @@
-export { MediaGallery } from "./MediaGallery";
+export { MediaGallery } from './MediaGallery'

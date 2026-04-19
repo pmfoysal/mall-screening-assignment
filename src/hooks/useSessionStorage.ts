@@ -8,15 +8,15 @@ import type { SectionId } from '@/types/sections.types'
  * Saves the last active section to sessionStorage for cross-reload continuity.
  */
 export function useSaveSessionSection(activeSection: SectionId | null): void {
-  useEffect(() => {
-    if (activeSection) {
-      try {
-        sessionStorage.setItem(SESSION_SECTION_KEY, activeSection)
-      } catch {
-        // sessionStorage not available
+   useEffect(() => {
+      if (activeSection) {
+         try {
+            sessionStorage.setItem(SESSION_SECTION_KEY, activeSection)
+         } catch {
+            // sessionStorage not available
+         }
       }
-    }
-  }, [activeSection])
+   }, [activeSection])
 }
 
 /**
@@ -24,10 +24,10 @@ export function useSaveSessionSection(activeSection: SectionId | null): void {
  * Plain utility function (not a hook) — safe to call anywhere on the client.
  */
 export function getSessionSection(): SectionId | null {
-  if (typeof window === 'undefined') return null
-  try {
-    return sessionStorage.getItem(SESSION_SECTION_KEY) as SectionId | null
-  } catch {
-    return null
-  }
+   if (typeof window === 'undefined') return null
+   try {
+      return sessionStorage.getItem(SESSION_SECTION_KEY) as SectionId | null
+   } catch {
+      return null
+   }
 }

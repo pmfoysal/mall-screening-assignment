@@ -1,3 +1,3 @@
 export interface HeroSectionProps {
-  className?: string;
+   className?: string
 }

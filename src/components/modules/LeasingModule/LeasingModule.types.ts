@@ -1,15 +1,15 @@
-export type LeasingType = "luxury" | "retail" | "fnb" | "popup";
+export type LeasingType = 'luxury' | 'retail' | 'fnb' | 'popup'
 
 export interface LeasingModuleProps {
-  type?: LeasingType;
+   type?: LeasingType
 }
 
 export interface LeasingConfig {
-  type: LeasingType;
-  title: string;
-  tagline: string;
-  description: string;
-  highlights: string[];
-  imageSrc: string;
-  ctaLabel: string;
+   type: LeasingType
+   title: string
+   tagline: string
+   description: string
+   highlights: string[]
+   imageSrc: string
+   ctaLabel: string
 }

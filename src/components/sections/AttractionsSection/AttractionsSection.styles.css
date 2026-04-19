@@ -1,209 +1,204 @@
 .attractionsSection {
-  background-color: oklch(7% 0.01 264);
-  overflow: hidden;
+   background-color: oklch(7% 0.01 264);
+   overflow: hidden;
 }
 
 /* ─── Desktop: Horizontal GSAP scroll ───────────────────── */
 .attractionsScrollContainer {
-  display: none;
-  position: relative;
+   display: none;
+   position: relative;
 }
 
 @media (min-width: 1024px) {
-  .attractionsScrollContainer {
-    display: block;
-  }
+   .attractionsScrollContainer {
+      display: block;
+   }
 }
 
 .attractionsTrack {
-  display: flex;
-  will-change: transform;
+   display: flex;
+   will-change: transform;
 }
 
 .attractionPanel {
-  flex: 0 0 100vw;
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
+   flex: 0 0 100vw;
+   height: 100vh;
+   position: relative;
+   overflow: hidden;
+   display: flex;
+   align-items: center;
 }
 
 .attractionPanelBg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+   position: absolute;
+   inset: 0;
+   z-index: 0;
 }
 
 .attractionPanelOverlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
-    to right,
-    oklch(3% 0 0 / 0.92) 0%,
-    oklch(3% 0 0 / 0.55) 55%,
-    oklch(3% 0 0 / 0.2) 100%
-  );
+   position: absolute;
+   inset: 0;
+   z-index: 1;
+   background: linear-gradient(to right, oklch(3% 0 0 / 0.92) 0%, oklch(3% 0 0 / 0.55) 55%, oklch(3% 0 0 / 0.2) 100%);
 }
 
 .attractionPanelContent {
-  position: relative;
-  z-index: 10;
-  padding: var(--section-padding-x);
-  max-width: 50vw;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
+   position: relative;
+   z-index: 10;
+   padding: var(--section-padding-x);
+   max-width: 50vw;
+   display: flex;
+   flex-direction: column;
+   gap: var(--space-6);
 }
 
 .attractionCategory {
-  font-family: var(--font-body);
-  font-size: var(--text-label);
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-gold);
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
+   font-family: var(--font-body);
+   font-size: var(--text-label);
+   font-weight: 500;
+   letter-spacing: 0.2em;
+   text-transform: uppercase;
+   color: var(--color-gold);
+   display: flex;
+   align-items: center;
+   gap: var(--space-3);
 }
 
 .attractionCategory::before {
-  content: "";
-  width: 24px;
-  height: 1px;
-  background-color: var(--color-gold);
+   content: '';
+   width: 24px;
+   height: 1px;
+   background-color: var(--color-gold);
 }
 
 .attractionName {
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5vw, 6rem);
-  font-weight: 300;
-  line-height: 0.95;
-  letter-spacing: -0.03em;
-  color: white;
+   font-family: var(--font-display);
+   font-size: clamp(2.5rem, 5vw, 6rem);
+   font-weight: 300;
+   line-height: 0.95;
+   letter-spacing: -0.03em;
+   color: white;
 }
 
 .attractionTagline {
-  font-family: var(--font-body);
-  font-size: var(--text-body-xl);
-  font-weight: 300;
-  color: oklch(100% 0 0 / 0.7);
-  line-height: 1.5;
-  max-width: 40ch;
+   font-family: var(--font-body);
+   font-size: var(--text-body-xl);
+   font-weight: 300;
+   color: oklch(100% 0 0 / 0.7);
+   line-height: 1.5;
+   max-width: 40ch;
 }
 
 .attractionStats {
-  display: flex;
-  gap: var(--space-8);
-  flex-wrap: wrap;
+   display: flex;
+   gap: var(--space-8);
+   flex-wrap: wrap;
 }
 
 .attractionStatItem {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
+   display: flex;
+   flex-direction: column;
+   gap: var(--space-1);
 }
 
 .attractionStatValue {
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
-  font-weight: 300;
-  color: var(--color-gold);
-  line-height: 1;
+   font-family: var(--font-display);
+   font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+   font-weight: 300;
+   color: var(--color-gold);
+   line-height: 1;
 }
 
 .attractionStatLabel {
-  font-family: var(--font-body);
-  font-size: var(--text-label);
-  color: oklch(100% 0 0 / 0.45);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+   font-family: var(--font-body);
+   font-size: var(--text-label);
+   color: oklch(100% 0 0 / 0.45);
+   letter-spacing: 0.1em;
+   text-transform: uppercase;
 }
 
 /* Panel counter */
 .panelCounter {
-  position: absolute;
-  bottom: var(--space-10);
-  right: var(--section-padding-x);
-  z-index: 10;
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 6vw, 8rem);
-  font-weight: 300;
-  color: oklch(100% 0 0 / 0.06);
-  line-height: 1;
-  letter-spacing: -0.04em;
-  user-select: none;
+   position: absolute;
+   bottom: var(--space-10);
+   right: var(--section-padding-x);
+   z-index: 10;
+   font-family: var(--font-display);
+   font-size: clamp(3rem, 6vw, 8rem);
+   font-weight: 300;
+   color: oklch(100% 0 0 / 0.06);
+   line-height: 1;
+   letter-spacing: -0.04em;
+   user-select: none;
 }
 
 /* Section header for desktop */
 .attractionsHeaderDesktop {
-  position: absolute;
-  top: var(--section-padding-y);
-  left: var(--section-padding-x);
-  z-index: 20;
-  max-width: 400px;
+   position: absolute;
+   top: var(--section-padding-y);
+   left: var(--section-padding-x);
+   z-index: 20;
+   max-width: 400px;
 }
 
 /* ─── Mobile/Tablet: Vertical stack ─────────────────────── */
 .attractionsVertical {
-  display: flex;
-  flex-direction: column;
-  padding: var(--section-padding-y) var(--section-padding-x);
-  gap: var(--space-12);
+   display: flex;
+   flex-direction: column;
+   padding: var(--section-padding-y) var(--section-padding-x);
+   gap: var(--space-12);
 }
 
 @media (min-width: 1024px) {
-  .attractionsVertical {
-    display: none;
-  }
+   .attractionsVertical {
+      display: none;
+   }
 }
 
 .attractionCard {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
-  padding-bottom: var(--space-12);
-  border-bottom: 1px solid oklch(100% 0 0 / 0.08);
+   display: flex;
+   flex-direction: column;
+   gap: var(--space-6);
+   padding-bottom: var(--space-12);
+   border-bottom: 1px solid oklch(100% 0 0 / 0.08);
 }
 
 .attractionCard:last-child {
-  border-bottom: none;
+   border-bottom: none;
 }
 
 .attractionCardImage {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+   position: relative;
+   width: 100%;
+   aspect-ratio: 16 / 9;
+   border-radius: var(--radius-lg);
+   overflow: hidden;
 }
 
 .attractionCardContent {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
+   display: flex;
+   flex-direction: column;
+   gap: var(--space-3);
 }
 
 .attractionCardName {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 300;
-  color: white;
-  line-height: 1;
-  letter-spacing: -0.02em;
+   font-family: var(--font-display);
+   font-size: clamp(2rem, 5vw, 3.5rem);
+   font-weight: 300;
+   color: white;
+   line-height: 1;
+   letter-spacing: -0.02em;
 }
 
 .attractionCardTagline {
-  font-family: var(--font-body);
-  font-size: var(--text-body-md);
-  color: oklch(100% 0 0 / 0.65);
-  line-height: 1.6;
+   font-family: var(--font-body);
+   font-size: var(--text-body-md);
+   color: oklch(100% 0 0 / 0.65);
+   line-height: 1.6;
 }
 
 .attractionCardStats {
-  display: flex;
-  gap: var(--space-6);
-  flex-wrap: wrap;
+   display: flex;
+   gap: var(--space-6);
+   flex-wrap: wrap;
 }

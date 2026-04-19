@@ -8,18 +8,18 @@ import { SectionsLoader } from './SectionsLoader'
  * (required for ssr:false dynamic imports per Next.js 16 rules).
  */
 export default function HomePage() {
-  return (
-    <>
-      {/* Fixed global navigation */}
-      <GlobalNavigation />
+   return (
+      <>
+         {/* Fixed global navigation */}
+         <GlobalNavigation />
 
-      {/* Right-edge section progress dots */}
-      <ProgressIndicator />
+         {/* Right-edge section progress dots */}
+         <ProgressIndicator />
 
-      {/* All 7 sections + contact footer */}
-      <main id="main-content" tabIndex={-1}>
-        <SectionsLoader />
-      </main>
-    </>
-  )
+         {/* All 7 sections + contact footer */}
+         <main id="main-content" tabIndex={-1}>
+            <SectionsLoader />
+         </main>
+      </>
+   )
 }

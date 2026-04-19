@@ -1,2 +1,2 @@
-export { GlobalNavigation } from "./GlobalNavigation";
-export type { GlobalNavigationProps } from "./GlobalNavigation.types";
+export { GlobalNavigation } from './GlobalNavigation'
+export type { GlobalNavigationProps } from './GlobalNavigation.types'

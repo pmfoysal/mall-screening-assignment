@@ -1,2 +1,2 @@
-export { CTAButton } from "./CTAButton";
-export type { CTAButtonProps } from "./CTAButton.types";
+export { CTAButton } from './CTAButton'
+export type { CTAButtonProps } from './CTAButton.types'

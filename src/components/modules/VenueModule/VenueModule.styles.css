@@ -1,118 +1,113 @@
 .venueModule {
-  background-color: var(--color-canvas);
-  min-height: 100vh;
+   background-color: var(--color-canvas);
+   min-height: 100vh;
 }
 
 .venueHero {
-  position: relative;
-  height: 70vh;
-  min-height: 500px;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
+   position: relative;
+   height: 70vh;
+   min-height: 500px;
+   display: flex;
+   align-items: center;
+   overflow: hidden;
 }
 
 .venueHeroOverlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    oklch(5% 0 0 / 0.85) 0%,
-    oklch(5% 0 0 / 0.4) 60%,
-    transparent 100%
-  );
-  z-index: 1;
+   position: absolute;
+   inset: 0;
+   background: linear-gradient(to right, oklch(5% 0 0 / 0.85) 0%, oklch(5% 0 0 / 0.4) 60%, transparent 100%);
+   z-index: 1;
 }
 
 .venueHeroContent {
-  position: relative;
-  z-index: 10;
-  padding: var(--section-padding-x);
-  max-width: var(--container-xl);
-  margin: 0 auto;
-  width: 100%;
-  padding-top: calc(72px + var(--space-10));
+   position: relative;
+   z-index: 10;
+   padding: var(--section-padding-x);
+   max-width: var(--container-xl);
+   margin: 0 auto;
+   width: 100%;
+   padding-top: calc(72px + var(--space-10));
 }
 
 .venueBackLink {
-  padding: var(--space-6) var(--section-padding-x);
-  max-width: var(--container-xl);
-  margin: 0 auto;
+   padding: var(--space-6) var(--section-padding-x);
+   max-width: var(--container-xl);
+   margin: 0 auto;
 }
 
 .venueSection {
-  padding: var(--section-padding-y) var(--section-padding-x);
+   padding: var(--section-padding-y) var(--section-padding-x);
 }
 
 .venueSectionAlt {
-  background-color: var(--color-surface);
+   background-color: var(--color-surface);
 }
 
 .venueInner {
-  max-width: var(--container-xl);
-  margin: 0 auto;
+   max-width: var(--container-xl);
+   margin: 0 auto;
 }
 
 .venueOverviewGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-12);
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: var(--space-12);
 }
 
 @media (min-width: 1024px) {
-  .venueOverviewGrid {
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-  }
+   .venueOverviewGrid {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+   }
 }
 
 .venueSpecs {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+   display: flex;
+   flex-direction: column;
+   border: 1px solid var(--color-border);
+   border-radius: var(--radius-lg);
+   overflow: hidden;
 }
 
 .venueSpecRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--space-4) var(--space-6);
-  border-bottom: 1px solid var(--color-border);
-  gap: var(--space-4);
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: var(--space-4) var(--space-6);
+   border-bottom: 1px solid var(--color-border);
+   gap: var(--space-4);
 }
 
 .venueSpecRow:last-child {
-  border-bottom: none;
+   border-bottom: none;
 }
 
 .venueSpecLabel {
-  font-family: var(--font-body);
-  font-size: var(--text-label);
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-  flex-shrink: 0;
+   font-family: var(--font-body);
+   font-size: var(--text-label);
+   font-weight: 500;
+   letter-spacing: 0.1em;
+   text-transform: uppercase;
+   color: var(--color-text-muted);
+   flex-shrink: 0;
 }
 
 .venueSpecValue {
-  font-family: var(--font-body);
-  font-size: var(--text-body-sm);
-  color: var(--color-text-primary);
-  text-align: right;
+   font-family: var(--font-body);
+   font-size: var(--text-body-sm);
+   color: var(--color-text-primary);
+   text-align: right;
 }
 
 .venueContactGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-12);
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: var(--space-12);
 }
 
 @media (min-width: 1024px) {
-  .venueContactGrid {
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-  }
+   .venueContactGrid {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+   }
 }

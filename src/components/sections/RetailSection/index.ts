@@ -1,2 +1,2 @@
-export { RetailSection } from "./RetailSection";
-export type { RetailSectionProps } from "./RetailSection.types";
+export { RetailSection } from './RetailSection'
+export type { RetailSectionProps } from './RetailSection.types'

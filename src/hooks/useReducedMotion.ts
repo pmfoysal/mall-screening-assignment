@@ -9,21 +9,21 @@ import { useEffect, useState } from 'react'
  * then kept in sync via an event listener.
  */
 export function useReducedMotion(): boolean {
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState<boolean>(() => {
-    if (typeof window === 'undefined') return false
-    return window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  })
+   const [prefersReducedMotion, setPrefersReducedMotion] = useState<boolean>(() => {
+      if (typeof window === 'undefined') return false
+      return window.matchMedia('(prefers-reduced-motion: reduce)').matches
+   })
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+   useEffect(() => {
+      const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
 
-    const handler = (event: MediaQueryListEvent) => {
-      setPrefersReducedMotion(event.matches)
-    }
+      const handler = (event: MediaQueryListEvent) => {
+         setPrefersReducedMotion(event.matches)
+      }
 
-    mediaQuery.addEventListener('change', handler)
-    return () => mediaQuery.removeEventListener('change', handler)
-  }, [])
+      mediaQuery.addEventListener('change', handler)
+      return () => mediaQuery.removeEventListener('change', handler)
+   }, [])
 
-  return prefersReducedMotion
+   return prefersReducedMotion
 }
