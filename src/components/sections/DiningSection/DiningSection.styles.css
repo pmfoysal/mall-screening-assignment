@@ -1,174 +1,174 @@
 .diningSection {
-  position: relative;
-  background-color: var(--color-canvas);
-  padding: var(--section-padding-y) var(--section-padding-x);
+   position: relative;
+   background-color: var(--color-canvas);
+   padding: var(--section-padding-y) var(--section-padding-x);
 }
 
 .diningInner {
-  max-width: var(--container-xl);
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-12);
+   max-width: var(--container-xl);
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   gap: var(--space-12);
 }
 
-/* Masonry grid */
+/* Grid layout - ensures consistent row structure */
 .diningGrid {
-  columns: 2;
-  gap: var(--space-3);
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: var(--space-3);
 }
 
 @media (min-width: 768px) {
-  .diningGrid {
-    columns: 3;
-  }
+   .diningGrid {
+      grid-template-columns: repeat(3, 1fr);
+   }
 }
 
 @media (min-width: 1280px) {
-  .diningGrid {
-    columns: 4;
-  }
+   .diningGrid {
+      grid-template-columns: repeat(4, 1fr);
+   }
 }
 
 .diningCard {
-  break-inside: avoid;
-  margin-bottom: var(--space-3);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  position: relative;
-  background-color: var(--color-surface-muted);
-  cursor: default;
+   border-radius: var(--radius-lg);
+   overflow: hidden;
+   position: relative;
+   background-color: var(--color-surface-muted);
+   cursor: default;
 }
 
 .diningCardImage {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
+   position: relative;
+   width: 100%;
+   height: 100%;
+   aspect-ratio: 0.75;
+   overflow: hidden;
 }
 
-.diningCard:nth-child(3n + 1) .diningCardImage {
+/* Vary aspect ratios by row position for visual interest */
+/*.diningCard:nth-child(4n + 1) .diningCardImage {
   aspect-ratio: 4 / 5;
 }
-.diningCard:nth-child(3n + 2) .diningCardImage {
+.diningCard:nth-child(4n + 2) .diningCardImage {
   aspect-ratio: 3 / 4;
 }
-.diningCard:nth-child(3n) .diningCardImage {
+.diningCard:nth-child(4n + 3) .diningCardImage {
   aspect-ratio: 1;
 }
+.diningCard:nth-child(4n) .diningCardImage {
+  aspect-ratio: 3 / 4;
+}*/
 
 .diningCardOverlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    oklch(5% 0 0 / 0.9) 0%,
-    oklch(5% 0 0 / 0.2) 50%,
-    transparent 100%
-  );
-  opacity: 0;
-  transition: opacity var(--duration-normal) var(--ease-out);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: var(--space-4);
-  z-index: 2;
+   position: absolute;
+   inset: 0;
+   background: linear-gradient(to top, oklch(5% 0 0 / 0.9) 0%, oklch(5% 0 0 / 0.2) 50%, transparent 100%);
+   opacity: 0;
+   transition: opacity var(--duration-normal) var(--ease-out);
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   padding: var(--space-4);
+   z-index: 2;
 }
 
 .diningCard:hover .diningCardOverlay {
-  opacity: 1;
+   opacity: 1;
 }
 
 .diningCardName {
-  font-family: var(--font-display);
-  font-size: clamp(1rem, 2vw, 1.5rem);
-  font-weight: 300;
-  color: white;
-  letter-spacing: -0.01em;
+   font-family: var(--font-display);
+   font-size: clamp(1rem, 2vw, 1.5rem);
+   font-weight: 300;
+   color: white;
+   letter-spacing: -0.01em;
 }
 
 .diningCardCuisine {
-  font-family: var(--font-body);
-  font-size: var(--text-label);
-  color: var(--color-gold);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-weight: 500;
+   font-family: var(--font-body);
+   font-size: var(--text-label);
+   color: var(--color-gold);
+   letter-spacing: 0.1em;
+   text-transform: uppercase;
+   font-weight: 500;
 }
 
 .signatureBadge {
-  position: absolute;
-  top: var(--space-3);
-  right: var(--space-3);
-  z-index: 3;
-  background-color: var(--color-gold);
-  color: oklch(7% 0.01 264);
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 0.2em 0.6em;
-  border-radius: var(--radius-full);
+   position: absolute;
+   top: var(--space-3);
+   right: var(--space-3);
+   z-index: 3;
+   background-color: var(--color-gold);
+   color: oklch(7% 0.01 264);
+   font-size: 0.6rem;
+   font-weight: 600;
+   letter-spacing: 0.12em;
+   text-transform: uppercase;
+   padding: 0.2em 0.6em;
+   border-radius: var(--radius-full);
 }
 
 /* Category pills */
 .categoryPills {
-  display: flex;
-  gap: var(--space-2);
-  flex-wrap: wrap;
+   display: flex;
+   gap: var(--space-2);
+   flex-wrap: wrap;
 }
 
 .categoryPill {
-  font-family: var(--font-body);
-  font-size: var(--text-label);
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: var(--space-2) var(--space-4);
-  border-radius: var(--radius-full);
-  border: 1px solid var(--color-border);
-  background-color: transparent;
-  color: var(--color-text-secondary);
-  cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-out);
+   font-family: var(--font-body);
+   font-size: var(--text-label);
+   font-weight: 500;
+   letter-spacing: 0.08em;
+   text-transform: uppercase;
+   padding: var(--space-2) var(--space-4);
+   border-radius: var(--radius-full);
+   border: 1px solid var(--color-border);
+   background-color: transparent;
+   color: var(--color-text-secondary);
+   cursor: pointer;
+   transition: all var(--duration-fast) var(--ease-out);
 }
 
 .categoryPill:hover {
-  border-color: var(--color-gold);
-  color: var(--color-text-primary);
+   border-color: var(--color-gold);
+   color: var(--color-text-primary);
 }
 
 .categoryPillActive {
-  background-color: var(--color-gold);
-  border-color: var(--color-gold);
-  color: oklch(7% 0.01 264);
+   background-color: var(--color-gold);
+   border-color: var(--color-gold);
+   color: oklch(7% 0.01 264);
 }
 
 /* Dwell time message */
 .dwellMessage {
-  padding: var(--space-12) var(--space-10);
-  background: linear-gradient(135deg, var(--color-surface-muted) 0%, var(--color-surface) 100%);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-  align-items: center;
+   padding: var(--space-12) var(--space-10);
+   background: linear-gradient(135deg, var(--color-surface-muted) 0%, var(--color-surface) 100%);
+   border: 1px solid var(--color-border);
+   border-radius: var(--radius-xl);
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   gap: var(--space-4);
+   align-items: center;
 }
 
 .dwellMessageQuote {
-  font-family: var(--font-display);
-  font-size: clamp(1.25rem, 3vw, 2rem);
-  font-weight: 300;
-  font-style: italic;
-  color: var(--color-text-primary);
-  max-width: 56ch;
-  line-height: 1.3;
+   font-family: var(--font-display);
+   font-size: clamp(1.25rem, 3vw, 2rem);
+   font-weight: 300;
+   font-style: italic;
+   color: var(--color-text-primary);
+   max-width: 56ch;
+   line-height: 1.3;
 }
 
 .dwellMessageSub {
-  font-family: var(--font-body);
-  font-size: var(--text-body-sm);
-  color: var(--color-text-muted);
-  letter-spacing: 0.05em;
+   font-family: var(--font-body);
+   font-size: var(--text-body-sm);
+   color: var(--color-text-muted);
+   letter-spacing: 0.05em;
 }
